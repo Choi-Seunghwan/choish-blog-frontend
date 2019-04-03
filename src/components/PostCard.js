@@ -11,13 +11,16 @@ class PostCard extends Component {
     }
 
 	render() {
+        console.log(this.state.item)
+
 		return (
 			<article className="post-card">
                 <a href=" ">
-                    <div class="post-card-image" style={{}} />
+                    <div className="post-card-image" style={{}} />
                 </a>
-                <div class="post-card-content">
-                    <header class="post-card-header"></header>
+                <div className="post-card-content">
+                    <header className="post-card-header"></header>
+                    {this.state.item.title}
                 </div>
 
             </article>

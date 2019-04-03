@@ -12,18 +12,21 @@ class PostList extends Component {
 					link: "#1",
 					contents: "contents1",
 					tag: "tag1",
+					image: "",
 				},
 				{
 					title: "title2",
 					link: "#2",
 					contents: "contents2",
 					tag: "tag2",
+					image: "",
 				},
 				{
 					title: "title3",
 					link: "#3",
 					contents: "contents3",
 					tag: "tag3",
+					image: "",
 				},
 				
 			]
@@ -36,9 +39,14 @@ class PostList extends Component {
 	}
 	
 	draw_post_card(){
-		return(
-			<PostCard item=""/>
-		)
+		let postCards = []
+		this.state.cardList.forEach(function(i, index){
+			postCards.push( <PostCard item={i} key={index}/> )
+		});
+
+
+		console.log(postCards)
+		return postCards
 	}
 
 	render() {
