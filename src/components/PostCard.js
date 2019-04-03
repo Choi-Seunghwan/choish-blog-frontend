@@ -13,8 +13,8 @@ class PostCard extends Component {
 	render() {
 		return (
 			<article className="post-card">
-                <a href="#">
-                    <div class="post-card-image" style="" />
+                <a href=" ">
+                    <div class="post-card-image" style={{}} />
                 </a>
                 <div class="post-card-content">
                     <header class="post-card-header"></header>

@@ -3,6 +3,7 @@ import PropType from 'prop-types';
 import Header from '../components/Header'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
+import PostList from '../components/PostLIst';
 
 class Home extends Component {
     render(){
@@ -10,12 +11,7 @@ class Home extends Component {
             <Layout>
                 <Header />
                 <Main>
-                    <p>loreom efoemf ekfwj emelf eof en fen finefinef nfei
-                        efiemf efim eifmim
-                    </p>
-                    <p>loreom efoemf ekfwj emelf eof en fen finefinef nfei
-                        efiemf efim eifmim
-                    </p>
+                    <PostList></PostList>
                 </Main>
             </Layout>
         );
