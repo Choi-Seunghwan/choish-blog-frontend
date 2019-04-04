@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    background: #f4f8fb;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}

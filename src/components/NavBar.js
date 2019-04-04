@@ -4,16 +4,25 @@ import React, { Component } from 'react';
 class NavBar extends Component {
 	render() {
 		return (
-			<nav className="site-nav top-70">
+			<nav className={"site-nav "+ this.props.className} >
 
 				<div className="site-nav-left">
-					left left leftleftleftleftleftleftleft
+					<ul className="nav-ul">
+						<li className="nav-li"><a href="/#">Home</a></li>
+						<li className="nav-li"><a href="/#">About</a></li>
+						<li className="nav-li"><a href="/#">dev.log</a></li>
+						<li className="nav-li"><a href="/#">Python</a></li>
+						<li className="nav-li"><a href="/#">Backend</a></li>
+					</ul>
 				</div>
 
 				<div className="site-nav-right">
-					rightrightrightrightrightrightrightrightright
+					<div className="nav-icons">
+						<a className="nav-icon" href="/#"><i className="fa fa-github fa-lg"></i></a>
+						<a className="nav-icon" href="/#"><i className="fa fa-github fa-lg"></i></a>
+						<a className="nav-icon" href="/#"><i className="fa fa-github fa-lg"></i></a>
+					</div>
 				</div>
-
 			</nav>
 		)
 	}

@@ -15,13 +15,13 @@ class PostCard extends Component {
 
         return (
             <article className="post-card">
-                <a href=" " className="post-card-image-link">
+                <a className="post-card-image-link" href="/detail">
                     <div className="post-card-image" style={{ backgroundImage: "url(" + this.state.item.image + ")" }} />
                 </a>
                 <div className="post-card-content">
-                    <a ClassName="post-card-content-link" href=" ">
+                    <a ClassName="post-card-content-link" href="/detail">
                         <header className="post-card-header">
-                            <span ClassName="post-card-tags">{this.state.item.tag}</span>
+                            <span className="post-card-tags">{this.state.item.tag}</span>
                             <h2 className="post-card-title">{this.state.item.title}</h2>
                         </header>
                         <section className="">
