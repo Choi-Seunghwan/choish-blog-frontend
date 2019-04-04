@@ -86,8 +86,6 @@ a {
 //post
 
 .post-list {
-    margin-top: -70px;
-    padding-top: 0;
     display: flex;
     position: relative;
     flex-wrap: wrap;
@@ -134,4 +132,18 @@ a {
     display: block;
     padding: 25px 25px 0;
     color: #2a2a2a;
+}
+
+//footer
+.site-footer {
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+.site-footer-text {
+
+}
+
+@media screen and (max-width: 992px) {
+
 }
