@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import PostCard from './PostCard';
+import img1 from '../asset/img/post1.jpg';
+import img2 from '../asset/img/post2.jpg';
+import img3 from '../asset/img/post3.jpg';
+
 
 class PostList extends Component {
 	constructor(props){
@@ -10,23 +14,37 @@ class PostList extends Component {
 				{
 					title: "title1",
 					link: "#1",
-					contents: "contents1",
+					content: "content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 ",
 					tag: "tag1",
-					image: "",
+					image: img1,
 				},
 				{
 					title: "title2",
 					link: "#2",
-					contents: "contents2",
+					content: "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2content2 content2 content2 content2",
 					tag: "tag2",
-					image: "",
+					image: img2
 				},
 				{
 					title: "title3",
 					link: "#3",
-					contents: "contents3",
+					content: "contents contents contents contents contents contents ",
 					tag: "tag3",
-					image: "",
+					image: img3,
+				},
+				{
+					title: "title4 title4 title4 title4 title4 title4",
+					link: "#3",
+					content: "contents contents contents contents contents contents ",
+					tag: "tag3",
+					image: img3,
+				},
+				{
+					title: "title5",
+					link: "#3",
+					content: "contents contents contents contents contents contents ",
+					tag: "tag3",
+					image: img3,
 				},
 				
 			]
