@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background: #f4f8fb;
+    overflow-x: hidden;
 }
 
 a {

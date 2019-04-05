@@ -146,6 +146,41 @@
     color: #2a2a2a;
 }
 
+
+//detail
+.post-detail {
+    position: relative;
+    z-index: 20;
+}
+
+.post-detail-header {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 4vw 3vw 3vw;
+    text-align: center;
+}
+
+.parallax-background {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-top: -10vh;
+    margin-left: -50vw;
+    margin-right:-50vw;
+
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+
+
 //footer
 .site-footer {
     padding-top: 30px;
@@ -153,8 +188,10 @@
 }
 
 .site-footer-text {
-
+    
 }
+
+
 
 @media screen and (max-width: 992px) {
 
