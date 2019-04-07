@@ -19,7 +19,7 @@ class PostCard extends Component {
                     <div className="post-card-image" style={{ backgroundImage: "url(" + this.state.item.image + ")" }} />
                 </a>
                 <div className="post-card-content">
-                    <a ClassName="post-card-content-link" href="/detail">
+                    <a className="post-card-content-link" href="/detail">
                         <header className="post-card-header">
                             <span className="post-card-tags">{this.state.item.tag}</span>
                             <h2 className="post-card-title">{this.state.item.title}</h2>

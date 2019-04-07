@@ -13,9 +13,6 @@
     flex-direction: column;
 }
 
-.top-70 {
-    top: -70px;
-}
 
 //header
 .site-header {
@@ -28,11 +25,13 @@
 }
 
 .site-title {
-    margin: 0
+    margin: 0;
+    font-size: 2.8rem;
 }
 
 .site-subtitle {
-    margin: 0
+    margin: 0;
+    color: #aaaaaa;
 }
 
 .site-header-content {
@@ -55,7 +54,8 @@
     justify-content: space-between;
     align-items: flex-start;
     height: 40px;
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    color: #aaaaaa;
 }
 
 .nav-ul {
@@ -67,6 +67,9 @@
 
 .nav-li {
     padding: 10px;
+}
+
+.nav-li a {
 }
 
 .nav-icons {
@@ -93,6 +96,11 @@
     align-items: center;
 }
 
+.icon-lg {
+    font-size: 1.8rem;
+    line-height: .75em;
+    vertical-align: -15%;
+}
 
 //post
 
@@ -100,14 +108,14 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    margin-top: -60px;
+    padding: 4vh 0 0 0;
 }
 
 //post-card
 
 .post-card {
     display: flex;
-    flex: 1 1 300px;
+    flex: 1 1 305px;
     flex-direction: column;
     min-height: 300px;
     overflow: hidden;
@@ -116,14 +124,6 @@
     background-size: cover;
     border-radius: 5px;
     transition: all .5s   
-}
-
-.post-card:first-child{
-    flex: 1 1 100%;
-}
-
-.post-card:first-child .post-card-image{
-    height: 400px;
 }
 
 .post-card-image-link{
@@ -136,7 +136,7 @@
 .post-card-image {
     width: auto;
     height: 200px;
-    background: #c5d2d9 no-repeat 50%;
+    background: #bbbbbb no-repeat 50%;
     background-size: cover;
 }
 
@@ -203,6 +203,33 @@
 
 
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 850px) {
+    .post-list{
+        margin-top: -100px
+    }
 
+    .top-70 {
+        top: -70px;
+    }
+
+    .post-card:first-child{
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+    
+    .post-card:first-child .post-card-image{
+        height: 400px;
+    }
+    
+    .post-card:first-child .post-card-image-link {
+        flex: 1 1 auto;
+    }
+    
+    .post-card:first-child .post-card-content {
+        flex: 0 1 365px;
+    }
+    
+    .post-card:first-child .post-card-content-link {
+        padding: 30px 40px 0px;
+    }
 }

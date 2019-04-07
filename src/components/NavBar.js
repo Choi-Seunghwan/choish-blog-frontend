@@ -18,9 +18,9 @@ class NavBar extends Component {
 
 				<div className="site-nav-right">
 					<div className="nav-icons">
-						<a className="nav-icon" href="/#"><i className="fa fa-github fa-lg"></i></a>
-						<a className="nav-icon" href="/#"><i className="fa fa-github fa-lg"></i></a>
-						<a className="nav-icon" href="/#"><i className="fa fa-github fa-lg"></i></a>
+						<a className="nav-icon" href="/#"><i className="fa fa-github fa-2x"></i></a>
+						<a className="nav-icon" href="/#"><i className="fa fa-github fa-2x"></i></a>
+						<a className="nav-icon" href="/#"><i className="fa fa-github fa-2x"></i></a>
 					</div>
 				</div>
 			</nav>
