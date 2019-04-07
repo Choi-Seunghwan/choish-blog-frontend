@@ -32,6 +32,7 @@
 .site-subtitle {
     margin: 0;
     color: #aaaaaa;
+    font-size: 1.2rem;
 }
 
 .site-header-content {
@@ -109,6 +110,7 @@
     position: relative;
     flex-wrap: wrap;
     padding: 4vh 0 0 0;
+    margin: 0 -10px;
 }
 
 //post-card
@@ -123,6 +125,7 @@
     background: white 50%;
     background-size: cover;
     border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
     transition: all .5s   
 }
 
@@ -212,24 +215,24 @@
         top: -70px;
     }
 
-    .post-card:first-child{
+    .post-card:nth-child(6n+1){
         flex: 1 1 100%;
         flex-direction: row;
     }
     
-    .post-card:first-child .post-card-image{
+    .post-card:nth-child(6n+1) .post-card-image{
         height: 400px;
     }
     
-    .post-card:first-child .post-card-image-link {
+    .post-card:nth-child(6n+1) .post-card-image-link {
         flex: 1 1 auto;
     }
     
-    .post-card:first-child .post-card-content {
+    .post-card:nth-child(6n+1) .post-card-content {
         flex: 0 1 365px;
     }
     
-    .post-card:first-child .post-card-content-link {
+    .post-card:nth-child(6n+1) .post-card-content-link {
         padding: 30px 40px 0px;
     }
 }

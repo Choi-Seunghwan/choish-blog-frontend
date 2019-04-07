@@ -46,6 +46,48 @@ class PostList extends Component {
 					tag: "tag3",
 					image: img3,
 				},
+				{
+					title: "title1",
+					link: "#1",
+					content: "content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 ",
+					tag: "tag1",
+					image: img1,
+				},
+				{
+					title: "title2",
+					link: "#2",
+					content: "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2content2 content2 content2 content2",
+					tag: "tag2",
+					image: img2
+				},
+				{
+					title: "title3",
+					link: "#3",
+					content: "contents contents contents contents contents contents ",
+					tag: "tag3",
+					image: img3,
+				},
+				{
+					title: "title1",
+					link: "#1",
+					content: "content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 ",
+					tag: "tag1",
+					image: img1,
+				},
+				{
+					title: "title2",
+					link: "#2",
+					content: "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2content2 content2 content2 content2",
+					tag: "tag2",
+					image: img2
+				},
+				{
+					title: "title3",
+					link: "#3",
+					content: "contents contents contents contents contents contents ",
+					tag: "tag3",
+					image: img3,
+				},
 				
 			]
 		}

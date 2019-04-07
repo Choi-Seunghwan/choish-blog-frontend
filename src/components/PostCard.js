@@ -30,8 +30,8 @@ class PostCard extends Component {
                         </section>
 
                     </a>
+                    <footer></footer>
                 </div>
-
             </article>
         )
     }
