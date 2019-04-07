@@ -100,6 +100,7 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
+    margin-top: -60px;
 }
 
 //post-card
@@ -117,6 +118,14 @@
     transition: all .5s   
 }
 
+.post-card:first-child{
+    flex: 1 1 100%;
+}
+
+.post-card:first-child .post-card-image{
+    height: 400px;
+}
+
 .post-card-image-link{
     position: relative;
     display: block;
@@ -130,6 +139,7 @@
     background: #c5d2d9 no-repeat 50%;
     background-size: cover;
 }
+
 
 .post-card-content {
     flex-grow: 1;
