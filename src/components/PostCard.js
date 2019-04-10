@@ -11,6 +11,7 @@ class PostCard extends Component {
     }
 
     render() {
+        console.log("postCard!!")
         console.log(this.state.item)
 
         return (

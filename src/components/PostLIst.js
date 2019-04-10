@@ -1,119 +1,84 @@
 import React, { Component } from 'react';
 import PostCard from './PostCard';
-import img1 from '../asset/img/post1.jpg';
-import img2 from '../asset/img/post2.jpg';
-import img3 from '../asset/img/post3.jpg';
+import APIService from './APIService';
+import axios from 'axios';
+import _ from 'lodash';
+
+// import img1 from '../asset/img/post1.jpg';
+// import img2 from '../asset/img/post2.jpg';
+// import img3 from '../asset/img/post3.jpg';
+
+const API_URL = 'http://localhost:8000';
+
 
 
 class PostList extends Component {
-	constructor(props){
-		super(props);
 
+
+	constructor(props) {
+		super(props);
 		this.state = {
-			cardList: [
-				{
-					title: "title1",
-					link: "#1",
-					content: "content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 ",
-					tag: "tag1",
-					image: img1,
-				},
-				{
-					title: "title2",
-					link: "#2",
-					content: "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2content2 content2 content2 content2",
-					tag: "tag2",
-					image: img2
-				},
-				{
-					title: "title3",
-					link: "#3",
-					content: "contents contents contents contents contents contents ",
-					tag: "tag3",
-					image: img3,
-				},
-				{
-					title: "title4 title4 title4 title4 title4 title4",
-					link: "#3",
-					content: "contents contents contents contents contents contents ",
-					tag: "tag3",
-					image: img3,
-				},
-				{
-					title: "title5",
-					link: "#3",
-					content: "contents contents contents contents contents contents ",
-					tag: "tag3",
-					image: img3,
-				},
-				{
-					title: "title1",
-					link: "#1",
-					content: "content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 ",
-					tag: "tag1",
-					image: img1,
-				},
-				{
-					title: "title2",
-					link: "#2",
-					content: "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2content2 content2 content2 content2",
-					tag: "tag2",
-					image: img2
-				},
-				{
-					title: "title3",
-					link: "#3",
-					content: "contents contents contents contents contents contents ",
-					tag: "tag3",
-					image: img3,
-				},
-				{
-					title: "title1",
-					link: "#1",
-					content: "content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 content1 ",
-					tag: "tag1",
-					image: img1,
-				},
-				{
-					title: "title2",
-					link: "#2",
-					content: "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2content2 content2 content2 content2",
-					tag: "tag2",
-					image: img2
-				},
-				{
-					title: "title3",
-					link: "#3",
-					content: "contents contents contents contents contents contents ",
-					tag: "tag3",
-					image: img3,
-				},
-				
-			]
+			items: [],
+			text: 'fffffffffffffffffffffffffffff'
 		}
 	}
 
-
-	get_post_list(){
+	async getPostList() {
+		const response =  await axios.get(`${API_URL}/api/posts`)
+		.then( (res) => {
+			return res;
+		}).catch((error) => {
+			console.error(error);
+		})
 		
+		this.setState({
+			items: response.data.results,
+			text: 'hello'
+		})
+		console.log("response");
+		console.log(response)
+
 	}
-	
-	draw_post_card(){
+
+
+	componentDidMount() {
+		// const apiService = new APIService();
+		// var items = apiService.getPostList();
+
+		// var items = this.getPostList();
+		this.getPostList();
+		console.log('########')
+	}
+
+	draw_post_card() {
 		let postCards = []
-		this.state.cardList.forEach(function(i, index){
-			postCards.push( <PostCard item={i} key={index}/> )
+		this.state.items.forEach(function (i, index) {
+			postCards.push(<PostCard item={i} key={index} />)
+			console.log("foreach")
 		});
 
-
-		console.log(postCards)
 		return postCards
 	}
 
 	render() {
 		return (
+			this.state.items.length
+			?
 			<div className="post-list">
-                {this.draw_post_card()}
-            </div>
+				{this.draw_post_card()}
+				
+				<p>{this.state.text}</p>
+				<p>{this.state.text}</p>
+				<p>{this.state.text}</p>
+				<p>{this.state.text}</p>
+			</div>
+			:
+			<div>
+				<p>{this.state.text}</p>
+				<p>{this.state.text}</p>
+				<p>{this.state.text}</p>
+				<p>{this.state.text}</p>
+			</div>
 		)
 	}
 }
