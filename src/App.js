@@ -8,12 +8,12 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <Route exact path="/" component={Home} />
                 <Switch>
-                    <Route path="/about" component={About} />
-                    <Route path="/detail" component={Detail} />
-                    <Route path="/test" component={Test} />
-                    {/* <Router component={NoMatch} /> */}
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/detail" component={Detail} />
+                <Route path="/test" component={Test} />
+                {/* <Router component={NoMatch} /> */}
                 </Switch>
             </Router>
         );

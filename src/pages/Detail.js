@@ -12,7 +12,7 @@ class Detail extends Component {
             <Layout>
                 <Header />
                 <Main>
-                    <PostDetail />
+                    <PostDetail param={this.props.location.search}/>
                 </Main>
                 <Footer />
             </Layout>
