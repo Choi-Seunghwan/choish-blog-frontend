@@ -17,9 +17,6 @@ class PostList extends Component {
 		this.state = {
 			items: [],
 		}
-		
-        console.log('ijgifiwefij')
-        console.log(this.props);
 	}
 
 	async getPostList() {
@@ -33,10 +30,8 @@ class PostList extends Component {
 		}).catch((error) => {
 			console.log("PostList Axios Error")
 			console.error(error);
-		})
-		
+		})	
 	}
-
 
 	componentDidMount() {
 		this.getPostList();
@@ -52,6 +47,8 @@ class PostList extends Component {
 	}
 
 	render() {
+		
+
 		return (
 			this.state.items.length
 			?

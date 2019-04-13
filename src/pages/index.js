@@ -1,4 +1,5 @@
 export { default as Home } from './Home'
 export { default as About } from './About'
 export { default as Detail } from './Detail'
+export { default as Tag } from './Tag'
 export { default as Test } from './Test'

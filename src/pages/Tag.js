@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import HomeHeader from '../components/HomeHeader'
+import Header from '../components/Header';
 import Footer from '../components/Footer'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
 import PostList from '../components/PostList';
 
-class Home extends Component {
+class Tag extends Component {
     render(){
         return (
             <Layout>
-                <HomeHeader />
+                <Header />
                 <Main>
-                    <PostList />
+                    <PostList param={this.props.location.search} />
                 </Main>
                 <Footer />
             </Layout>
@@ -21,4 +21,4 @@ class Home extends Component {
 }
 
 
-export default Home;
+export default Tag;

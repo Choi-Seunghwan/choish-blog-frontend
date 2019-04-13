@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Home, About, Detail, Test } from './pages';
+import { Home, About, Detail, Tag, Test } from './pages';
 
 
 
@@ -12,8 +12,8 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/detail" component={Detail} />
+                <Route path="/Tag" component={Tag} />
                 <Route path="/test" component={Test} />
-                {/* <Router component={NoMatch} /> */}
                 </Switch>
             </Router>
         );
