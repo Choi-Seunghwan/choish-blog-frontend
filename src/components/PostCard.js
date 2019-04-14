@@ -15,7 +15,7 @@ class PostCard extends Component {
 
         const imgUrl = require('../asset/img/post1.jpg')
         const detailUrl = "/detail?item=" + this.state.item.id
-        console.log(detailUrl)
+        
         return (
             <article className="post-card">
                 <Link className="post-card-image-link" to={detailUrl}>
