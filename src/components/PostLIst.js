@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PostCard from './PostCard';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/index';
 
@@ -8,17 +7,13 @@ import { fetchPosts } from '../actions/index';
 // import img2 from '../asset/img/post2.jpg';
 // import img3 from '../asset/img/post3.jpg';
 
-const API_URL = 'http://localhost:8000';
-
 
 class PostList extends Component {
 
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			items: [],
-		}
+		
 	}
 
 	// async getPostList() {

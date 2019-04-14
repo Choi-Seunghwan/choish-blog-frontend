@@ -11,7 +11,6 @@ export const fetchPosts = (filter) => {
     if(filter){
     }
     
-    console.log("fetchPosts")
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
@@ -22,8 +21,14 @@ export const fetchPosts = (filter) => {
     };
 }
 
-export const fetchPost = (filter) => {
-    let url = ``
-    
-
+export const fetchPost = (id) => {
+    let url = `${ROOT_URL}/api/posts/${id}`;
+    return (dispatch) => {
+        axios.get(url).then(response => {
+            dispatch({
+                type: FETCH_POST,
+                payload: response,
+            })
+        })
+    }
 }
