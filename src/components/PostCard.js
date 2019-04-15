@@ -17,7 +17,7 @@ class PostCard extends Component {
                 <div className="post-card-content">
                     <Link className="post-card-content-link" to={detailUrl}>
                         <header className="post-card-header">
-                            <span className="post-card-tags">{this.props.post.tags}</span>
+                            <span className="post-card-tags">{this.props.post.tag}</span>
                             <h2 className="post-card-title">{this.props.post.title}</h2>
                         </header>
                         <section className="">

@@ -27,14 +27,11 @@ class PostList extends Component {
 	}
 
 	componentDidUpdate(prevProps){
-		console.log("prev");
-		console.log(this.props);
-		console.log("next");
-		console.log(prevProps);
-		if(this.props.params.match.path !== prevProps.params.match.path
-			|| this.props.params.match.params.tag !== prevProps.params.match.params.tag){
-				this.fetchAndFilterPosts()
-		}
+		if(this.props.params)
+			if(this.props.params.match.path !== prevProps.params.match.path
+				|| this.props.params.match.params.tag !== prevProps.params.match.params.tag){
+					this.fetchAndFilterPosts()
+			}
 		
 	}
 

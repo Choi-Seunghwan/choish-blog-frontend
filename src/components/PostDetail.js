@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchPost } from '../actions/index';
 import { connect } from 'react-redux';
+import Remarkable from 'remarkable';
 
 import img1 from '../asset/img/post1.jpg';
 
@@ -16,8 +17,12 @@ class PostDetail extends Component {
 
 	renderPost() {
 		const post = this.props.post
-
 		if(!post) {return (<div></div>);};
+		var body = post.contents
+
+		const md = new Remarkable({html: true})
+		const markdown = md.render(body);
+
 		return(
 			<div>
 				<figure className="parallax-background" style={{ backgroundImage: "url(" + img1 + ")" }}>
@@ -29,8 +34,8 @@ class PostDetail extends Component {
                                 
                 <section className="post-detail-content">
 					<div className="content-markdown">
+						<div dangerouslySetInnerHTML={{__html:markdown}} />
 						{post.subtitle}
-						{post.contents}
 					</div>
 				</section>
 			</div>
