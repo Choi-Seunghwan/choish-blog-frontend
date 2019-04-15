@@ -16,33 +16,18 @@ class PostList extends Component {
 		
 	}
 
-	// async getPostList() {
-	// 	await axios.get(`${API_URL}/api/posts`)
-	// 	.then( (res) => {
-	// 		this.setState({
-	// 			items: res.data.results,
-	// 		})
-	// 		return res;
-	// 	}).catch((error) => {
-	// 		console.log("PostList Axios Error")
-	// 		console.error(error);
-	// 	})	
-	// }
-
 	componentDidMount() {
-		// this.getPostList();
 		this.props.fetchPosts();
 	}
 
 	renderPostCard() {
 		const items = this.props.posts.results;
-		
+	
 		if(!items) {return (<div></div>);};
 		let postCards = []
 		items.forEach(function (i, index) {
-			postCards.push(<PostCard item={i} key={index} />)
+			postCards.push(<PostCard post={i} key={index} />)
 		});
-
 		return postCards
 	}
 

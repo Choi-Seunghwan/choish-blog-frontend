@@ -8,11 +8,12 @@ import PostDetail from '../components/PostDetail';
 class Detail extends Component {
 
     render() {
+        console.log(this.props.match.params.slug)
         return (
             <Layout>
                 <Header />
                 <Main>
-                    <PostDetail param={this.props.location.search}/>
+                    <PostDetail params={this.props}/>
                 </Main>
                 <Footer />
             </Layout>

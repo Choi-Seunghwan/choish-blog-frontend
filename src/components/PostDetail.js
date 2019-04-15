@@ -14,10 +14,9 @@ class PostDetail extends Component {
 	}
 
 	componentDidMount() {
-		let id = queryString.parse(this.props.param).item
-
-		// this.getPostDetail();
-		console.log(this.props.param)
+		let slug = this.props.params.match.params.slug
+	
+		this.props.fetchPost(slug);
 	}
 
 	renderPost() {

@@ -6,15 +6,12 @@ class PostCard extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            item: props.item
-        }
     }
 
     render() {
 
         const imgUrl = require('../asset/img/post1.jpg')
-        const detailUrl = "/detail?item=" + this.state.item.id
+        const detailUrl = "/post/" + this.props.post.slug
         
         return (
             <article className="post-card">
@@ -24,11 +21,11 @@ class PostCard extends Component {
                 <div className="post-card-content">
                     <Link className="post-card-content-link" to={detailUrl}>
                         <header className="post-card-header">
-                            <span className="post-card-tags">{this.state.item.tags}</span>
-                            <h2 className="post-card-title">{this.state.item.title}</h2>
+                            <span className="post-card-tags">{this.props.post.tags}</span>
+                            <h2 className="post-card-title">{this.props.post.title}</h2>
                         </header>
                         <section className="">
-                            <p>{this.state.item.subtitle}</p>
+                            <p>{this.props.post.subtitle}</p>
                             <div></div>
                         </section>
 

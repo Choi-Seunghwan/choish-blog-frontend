@@ -9,6 +9,8 @@ export const fetchPosts = (filter) => {
     let url = `${ROOT_URL}/api/posts/`;
     
     if(filter){
+        //!log
+        //tag 기능 추가.
     }
     
     return (dispatch) => {
@@ -21,8 +23,8 @@ export const fetchPosts = (filter) => {
     };
 }
 
-export const fetchPost = (id) => {
-    let url = `${ROOT_URL}/api/posts/${id}`;
+export const fetchPost = (slug) => {
+    let url = `${ROOT_URL}/api/posts/post/${slug}`;
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
