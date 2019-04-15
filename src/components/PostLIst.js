@@ -10,14 +10,32 @@ import { fetchPosts } from '../actions/index';
 
 class PostList extends Component {
 
-
-	constructor(props) {
-		super(props);
+	fetchAndFilterPosts(){
+		let filter = {
+			tag: "",
+		}
+		if(this.props.params)
+			if (this.props.params.match.params.tag){
+				filter.tag = this.props.params.match.params.tag;
+			}
 		
+		this.props.fetchPosts(filter);
 	}
 
 	componentDidMount() {
-		this.props.fetchPosts();
+		this.fetchAndFilterPosts();
+	}
+
+	componentDidUpdate(prevProps){
+		console.log("prev");
+		console.log(this.props);
+		console.log("next");
+		console.log(prevProps);
+		if(this.props.params.match.path !== prevProps.params.match.path
+			|| this.props.params.match.params.tag !== prevProps.params.match.params.tag){
+				this.fetchAndFilterPosts()
+		}
+		
 	}
 
 	renderPostCard() {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import queryString from 'query-string';
 import { fetchPost } from '../actions/index';
 import { connect } from 'react-redux';
 
@@ -9,13 +8,9 @@ import img1 from '../asset/img/post1.jpg';
 
 class PostDetail extends Component {
 
-	constructor(props){
-		super(props)
-	}
-
 	componentDidMount() {
 		let slug = this.props.params.match.params.slug
-	
+
 		this.props.fetchPost(slug);
 	}
 

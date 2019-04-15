@@ -8,7 +8,6 @@ import PostDetail from '../components/PostDetail';
 class Detail extends Component {
 
     render() {
-        console.log(this.props.match.params.slug)
         return (
             <Layout>
                 <Header />

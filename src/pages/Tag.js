@@ -11,7 +11,7 @@ class Tag extends Component {
             <Layout>
                 <Header />
                 <Main>
-                    <PostList param={this.props.location.search} />
+                    <PostList params={this.props} />
                 </Main>
                 <Footer />
             </Layout>

@@ -9,8 +9,9 @@ export const fetchPosts = (filter) => {
     let url = `${ROOT_URL}/api/posts/`;
     
     if(filter){
-        //!log
-        //tag 기능 추가.
+        if(filter.tag){
+            url = url + `?tag=${filter.tag}`
+        }
     }
     
     return (dispatch) => {
