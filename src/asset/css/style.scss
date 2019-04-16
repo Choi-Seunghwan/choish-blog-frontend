@@ -19,7 +19,6 @@
     position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: black;
     background-size: cover;
     color: white;
 }
@@ -27,12 +26,14 @@
 .site-title {
     margin: 0;
     font-size: 2.8rem;
+    opacity: 0.95;
 }
 
 .site-subtitle {
     margin: 0;
-    color: #aaaaaa;
+    color: white;
     font-size: 1.2rem;
+    opacity: 0.65;
 }
 
 .site-header-content {
@@ -56,7 +57,8 @@
     align-items: flex-start;
     height: 40px;
     font-size: 0.95rem;
-    color: #aaaaaa;
+    color: white;
+    opacity: 0.7;
 }
 
 .nav-ul {
@@ -170,19 +172,43 @@
     margin: 0 auto;
     padding: 4vw 3vw 3vw;
     text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    position: fixed;
+    transition: all 0.5s;
+}
+
+.post-detail-header-title {
+    font-size: 2.1rem;
+    margin:0;
+    opacity: 0.95;
+}
+.post-detail-header-subtitle {
+    font-size: 1.0rem;
+    margin: 10px 0 0 0;
+    color: white;
+    opacity: 0.9;
+}
+
+.post-detail-content {
+    padding: 10px;
+}
+
+.parallax-outer {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    top:-75px;
 }
 
 .parallax-background {
-    min-height: 100vh;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-top: -10vh;
-    margin-left: -50vw;
-    margin-right:-50vw;
-
-    
+    min-height: 110vh;
+    margin:0;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

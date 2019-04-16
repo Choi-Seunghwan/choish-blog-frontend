@@ -4,13 +4,9 @@ import NavBar from './NavBar';
 
 class HomeHeader extends Component {
 
-	draw_home(){
-		
-	}
-
 	render() {
 		return (
-			<header className="site-header outer">
+			<header className="site-header outer" style={{ backgroundImage: "url(" + mainImg + ")" }}>
 			{/* <header className="site-header outer" style={{ backgroundImage: "url(" + mainImg + ")" }}></header> */}
 				<div className="inner" >
 					<div className="site-header-content">

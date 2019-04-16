@@ -18,8 +18,8 @@ class NavBar extends Component {
 
 				<div className="site-nav-right">
 					<div className="nav-icons">
-						<Link className="nav-icon" to="/"><i className="fa fa-github fa-2x"></i></Link>
-						<Link className="nav-icon" to="/"><i className="fa fa-linkedin fa-2x"></i></Link>
+						<a className="nav-icon" target="_blank" href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-lg"></i></a>
+						<Link className="nav-icon" to="/"><i className="fa fa-linkedin fa-lg"></i></Link>
 					</div>
 				</div>
 			</nav>

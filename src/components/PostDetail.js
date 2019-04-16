@@ -9,32 +9,56 @@ import img1 from '../asset/img/post1.jpg';
 
 class PostDetail extends Component {
 
-	componentDidMount() {
-		let slug = this.props.params.match.params.slug
+	constructor(props){
+		super(props);
+		this.state = {
+			opacity: 1,
+		};
+	}
 
+	addEventListener = e => {
+		if (window.scrollY > 200 ) {
+			this.setState({opacity: 0})
+		}
+		else if (window.scrollY > 100  ) {
+			this.setState({opacity: 0.5})
+		}
+		else {
+			this.setState({opacity: 1})
+		}
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.addEventListener);
+
+		let slug = this.props.params.match.params.slug
 		this.props.fetchPost(slug);
 	}
 
 	renderPost() {
 		const post = this.props.post
-		if(!post) {return (<div></div>);};
-		var body = post.contents
+		if (!post) { return (<div></div>); };
+		let contents = post.contents
 
-		const md = new Remarkable({html: true})
-		const markdown = md.render(body);
+		const md = new Remarkable({ html: true })
+		const markdown = md.render(contents);
 
-		return(
+		return (
 			<div>
-				<figure className="parallax-background" style={{ backgroundImage: "url(" + img1 + ")" }}>
-					
-				</figure>
-				<header className="post-detail-header">
-                    <h1 className="post-detail-title">{post.title}</h1>
-                </header>
-                                
-                <section className="post-detail-content">
+				<div className="parallax-outer">
+					<figure className="parallax-background" style={{ backgroundImage: "url(" + img1 + ")" }}>	
+						<header className="post-detail-header" style={{opacity: this.state.opacity}} >
+							<h1 className="post-detail-header-title">{post.title}</h1>
+							<h4 className="post-detail-header-subtitle">{post.subtitle}</h4>
+						</header>
+					</figure>
+
+				</div>
+
+
+				<section className="post-detail-content">
 					<div className="content-markdown">
-						<div dangerouslySetInnerHTML={{__html:markdown}} />
+						<div dangerouslySetInnerHTML={{ __html: markdown }} />
 						{post.subtitle}
 					</div>
 				</section>
@@ -56,4 +80,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, {fetchPost, })(PostDetail);
+export default connect(mapStateToProps, { fetchPost, })(PostDetail);
