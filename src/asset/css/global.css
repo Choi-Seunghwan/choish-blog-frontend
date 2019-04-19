@@ -1,7 +1,10 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
 body {
     margin: 0;
     background: #fafafa;
     overflow-x: hidden;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 a {

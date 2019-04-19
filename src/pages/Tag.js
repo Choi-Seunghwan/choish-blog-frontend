@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
 import Footer from '../components/Footer'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
 import PostList from '../components/PostList';
+import BannerHeader from '../components/BannerHeader';
 
 class Tag extends Component {
     render(){
         return (
             <Layout>
-                <Header />
+                <BannerHeader />
                 <Main>
                     <PostList params={this.props} />
                 </Main>

@@ -1,3 +1,5 @@
+
+
 .outer {
     padding: 0 3vw;
 }
@@ -13,6 +15,9 @@
     flex-direction: column;
 }
 
+.home {
+
+}
 
 //header
 .site-header {
@@ -45,6 +50,11 @@
     max-height: 450px;
     padding: 4vw 4vw;
     text-align: center;
+}
+
+//banner
+.banner {
+    background-color: black;
 }
 
 //Nav
@@ -169,8 +179,7 @@
 
 .post-detail-header {
     max-width: 1040px;
-    margin: 0 auto;
-    padding: 4vw 3vw 3vw;
+    margin: 0;
     text-align: center;
     color: white;
     display: flex;
@@ -180,10 +189,13 @@
     min-height: 80vh;
     position: fixed;
     transition: all 0.5s;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
 }
 
 .post-detail-header-title {
-    font-size: 2.1rem;
+    font-size: 2.4rem;
     margin:0;
     opacity: 0.95;
 }
@@ -194,8 +206,18 @@
     opacity: 0.9;
 }
 
-.post-detail-content {
+.post-detail-contents {
     padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
+    transition: all .5s;
+    position: relative;
+    top: -20vh;
+    font-size: 1.3rem;
+    background-color: #fafafa;
+    font-family: 'Nanum Myeongjo', serif;
+    line-height: 2rem;
+    overflow-x: hidden;
 }
 
 .parallax-outer {
@@ -230,34 +252,47 @@
 }
 
 
-
 @media screen and (min-width: 850px) {
-    .post-list{
-        margin-top: -100px
+    
+    
+
+    .post-detail-header {
+        width: 800px;
+        min-width: 800px;
     }
 
-    .top-70 {
-        top: -70px;
+    .post-detail-header-title {
+        font-size: 3.0rem;
     }
 
-    .post-card:nth-child(6n+1){
+    .home .post-card:nth-child(6n+1){
         flex: 1 1 100%;
         flex-direction: row;
     }
     
-    .post-card:nth-child(6n+1) .post-card-image{
+    .home .post-card:nth-child(6n+1) .post-card-image{
         height: 400px;
     }
     
-    .post-card:nth-child(6n+1) .post-card-image-link {
+    .home .post-card:nth-child(6n+1) .post-card-image-link {
         flex: 1 1 auto;
     }
     
-    .post-card:nth-child(6n+1) .post-card-content {
+    .home .post-card:nth-child(6n+1) .post-card-content {
         flex: 0 1 365px;
     }
     
-    .post-card:nth-child(6n+1) .post-card-content-link {
+    .home .post-card:nth-child(6n+1) .post-card-content-link {
         padding: 30px 40px 0px;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    .post-list{
+        margin-top: -100px
+    }
+    .top-70 {
+        top: -70px;
     }
 }

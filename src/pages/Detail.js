@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import PostDetail from '../components/PostDetail';
+import DisqusThread from '../components/DisqusThread';
 
 class Detail extends Component {
 
@@ -13,6 +14,7 @@ class Detail extends Component {
                 <Header />
                 <Main>
                     <PostDetail params={this.props}/>
+                    <DisqusThread />
                 </Main>
                 <Footer />
             </Layout>

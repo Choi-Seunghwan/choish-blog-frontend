@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import HomeHeader from '../components/HomeHeader'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
-import PostList from '../components/PostList';
+import BannerHeader from '../components/BannerHeader';
+import MyEditor from '../components/MyEditor';
 
-class Home extends Component {
+class Edit extends Component {
     render(){
         return (
             <Layout>
-                <HomeHeader />
-                <Main className="home">
-                    <PostList />
+                <BannerHeader />
+                <Main>
+                    <MyEditor />
                 </Main>
                 <Footer />
             </Layout>
@@ -20,5 +20,4 @@ class Home extends Component {
     
 }
 
-
-export default Home;
+export default Edit;

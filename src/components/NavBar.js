@@ -12,13 +12,13 @@ class NavBar extends Component {
 						<li className="nav-li"><Link to="/">About</Link></li>
 						<li className="nav-li"><Link to="/tag/devlog">Project</Link></li>
 						<li className="nav-li"><Link to="/tag/tag1">Devlog</Link></li>
-						<li className="nav-li"><Link to="/tag/tag2">Life</Link></li>
+						<li className="nav-li"><Link to="/edit">Edit</Link></li>
 					</ul>
 				</div>
 
 				<div className="site-nav-right">
 					<div className="nav-icons">
-						<a className="nav-icon" target="_blank" href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-lg"></i></a>
+						<a className="nav-icon" target="_blank" rel="noopener noreferrer" href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-lg"></i></a>
 						<Link className="nav-icon" to="/"><i className="fa fa-linkedin fa-lg"></i></Link>
 					</div>
 				</div>

@@ -17,7 +17,7 @@ class PostDetail extends Component {
 	}
 
 	addEventListener = e => {
-		if (window.scrollY > 200 ) {
+		if (window.scrollY > 250 ) {
 			this.setState({opacity: 0})
 		}
 		else if (window.scrollY > 100  ) {
@@ -56,7 +56,7 @@ class PostDetail extends Component {
 				</div>
 
 
-				<section className="post-detail-content">
+				<section className="post-detail-contents">
 					<div className="content-markdown">
 						<div dangerouslySetInnerHTML={{ __html: markdown }} />
 						{post.subtitle}
