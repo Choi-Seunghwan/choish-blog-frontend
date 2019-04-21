@@ -2,6 +2,9 @@ import axios from 'axios';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POST ='FETCH_POST';
+export const CREATE_POST = 'CREATE_POST';
+export const DELETE_POST = 'DELETE_POST';
+export const UPDATE_POST = 'UPDATE_POST';
 
 export const ROOT_URL = 'http://localhost:8000';
 
@@ -32,6 +35,23 @@ export const fetchPost = (slug) => {
                 type: FETCH_POST,
                 payload: response,
             })
+        })
+    }
+}
+
+export function createPost(props) {
+    let url = `${ROOT_URL}/api/posts/new/`;
+    
+    return (dispatch) => {
+        axios.post(url, props).then(response => {
+            
+            dispatch({
+                type: CREATE_POST,
+                payload: response
+            });
+        }).catch(error => {
+            console.log(props)
+            console.log(error.response)
         })
     }
 }

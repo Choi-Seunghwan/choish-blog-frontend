@@ -9,7 +9,7 @@ class Tag extends Component {
     render(){
         return (
             <Layout>
-                <BannerHeader />
+                <BannerHeader params={this.props}/>
                 <Main>
                     <PostList params={this.props} />
                 </Main>

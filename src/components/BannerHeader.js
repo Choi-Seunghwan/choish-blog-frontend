@@ -11,11 +11,9 @@ class BannerHeader extends Component {
                 
                 <div className="inner" >
 					<div className="site-header-content">
-						<h1 className="site-title">Tag</h1>
+						{/* <h1 className="site-title">Tag : {this.props.params.match.params.tag}</h1> */}
 						<h4 className="site-subtitle">Tag..</h4>
 					</div>
-
-					
 				</div>
 			</header>
 		)
