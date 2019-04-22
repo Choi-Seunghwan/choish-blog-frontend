@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Footer from '../components/Footer'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
-import BannerHeader from '../components/BannerHeader';
+import EditHeader from '../components/EditHeader';
 import MyEditor from '../components/MyEditor';
 
 class Edit extends Component {
     render(){
         return (
             <Layout>
-                <BannerHeader />
+                <EditHeader />
                 <Main>
                     <MyEditor />
                 </Main>

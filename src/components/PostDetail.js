@@ -46,7 +46,7 @@ class PostDetail extends Component {
 		return (
 			<div>
 				<div className="parallax-outer">
-					<figure className="parallax-background" style={{ backgroundImage: "url(" + img1 + ")" }}>	
+					<figure className="parallax-background" style={{ backgroundImage: `url(${post.cover_image_url})` }}>	
 						<header className="post-detail-header" style={{opacity: this.state.opacity}} >
 							<h1 className="post-detail-header-title">{post.title}</h1>
 							<h4 className="post-detail-header-subtitle">{post.subtitle}</h4>

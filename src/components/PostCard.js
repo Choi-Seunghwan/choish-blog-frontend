@@ -12,7 +12,7 @@ class PostCard extends Component {
         return (
             <article className="post-card">
                 <Link className="post-card-image-link" to={detailUrl}>
-                    <div className="post-card-image" style={{ backgroundImage: `url(${imgUrl})` }} />
+                    <div className="post-card-image" style={{ backgroundImage: `url(${this.props.post.cover_image_url})` }} />
                 </Link>
                 <div className="post-card-content">
                     <Link className="post-card-content-link" to={detailUrl}>

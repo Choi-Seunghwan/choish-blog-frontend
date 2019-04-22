@@ -6,7 +6,10 @@ export const CREATE_POST = 'CREATE_POST';
 export const DELETE_POST = 'DELETE_POST';
 export const UPDATE_POST = 'UPDATE_POST';
 
+export const UPLOAD_FILE = 'UPLOAD_FILE';
+
 export const ROOT_URL = 'http://localhost:8000';
+export const MEDIA_URL = 'http://localhost:8000/media/';
 
 export const fetchPosts = (filter) => {
     let url = `${ROOT_URL}/api/posts/`;
@@ -39,19 +42,52 @@ export const fetchPost = (slug) => {
     }
 }
 
-export function createPost(props) {
+export function createPost(post) {
     let url = `${ROOT_URL}/api/posts/new/`;
     
+    // console.log(post.uploadedImages[0].file);
+    // let myfile = post.uploadedImages[0].file;
+    // var myblob = new Blob([myfile], {type: 'image/png'});
+
+    // var formData = new FormData();
+    // formData.append("title", post.title);
+    // formData.append("subtitle", post.subtitle);
+    // formData.append("slug", post.slug);
+    // formData.append("tag", post.tag);
+    // formData.append("contents", post.contents);
+    // formData.append("myfile", myblob);
+
+    // const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     return (dispatch) => {
-        axios.post(url, props).then(response => {
-            
+        axios.post(url, post).then(response => {
             dispatch({
                 type: CREATE_POST,
                 payload: response
-            });
+            })
+            // console.log("response")
+            // console.log(response)
+        })
+    }
+}
+
+export function uploadFile(file) {
+    let url = `${ROOT_URL}/upload/${file.name}`;
+
+    const formData = new FormData();
+    formData.append('file', file)
+
+    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    return (dispatch) => {
+        axios.post(url, formData).then(response => {
+            dispatch({
+                type: UPLOAD_FILE,
+                payload: response
+            })
+            // console.log("response")
+            // console.log(response)
         }).catch(error => {
-            console.log(props)
-            console.log(error.response)
+            // console.log("error")
+            // console.log(error.response)
         })
     }
 }
