@@ -6,6 +6,10 @@ export const CREATE_POST = 'CREATE_POST';
 export const DELETE_POST = 'DELETE_POST';
 export const UPDATE_POST = 'UPDATE_POST';
 
+export const FETCH_DEVLOGS = 'FETCH_DEVLOGS';
+export const FETCH_DEVLOG = 'FETCH_DEVLOG';
+export const CREATE_DEVLOG = 'CREATE_DEVLOG';
+
 export const UPLOAD_FILE = 'UPLOAD_FILE';
 
 export const ROOT_URL = 'http://localhost:8000';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 
-class BannerHeader extends Component {
+class TagHeader extends Component {
 
 	render() {
 		return (
@@ -11,8 +11,8 @@ class BannerHeader extends Component {
                 
                 <div className="inner" >
 					<div className="site-header-content">
-						<h1 className="site-title">Banner {this.props.title} </h1>
-						<h4 className="site-subtitle">Banner... {this.props.subtitle}</h4>
+						<h1 className="site-title">Tag : {this.props.params.match.params.tag}</h1>
+						<h4 className="site-subtitle">Tag..</h4>
 					</div>
 				</div>
 			</header>
@@ -20,4 +20,4 @@ class BannerHeader extends Component {
 	}
 }
 
-export default BannerHeader;
+export default TagHeader;

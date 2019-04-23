@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import Footer from '../components/Footer'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
-import PostList from '../components/PostList';
-import TagHeader from '../components/TagHeader';
+import BannerHeader from '../components/BannerHeader';
+import DevLogList from '../components/DevLogList';
 
 class Tag extends Component {
     render(){
         return (
             <Layout>
-                <TagHeader params={this.props}/>
+                <BannerHeader params={this.props} title={"DevLog"} subtitle={"DevLog..."}/>
                 <Main>
-                    <PostList params={this.props} />
+                    <DevLogList />
                 </Main>
                 <Footer />
             </Layout>

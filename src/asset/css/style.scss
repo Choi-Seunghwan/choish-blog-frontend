@@ -138,7 +138,7 @@
     background-size: cover;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
-    transition: all .5s   
+    transition: all .5s;  
 }
 
 .post-card-image-link{
@@ -168,6 +168,18 @@
     display: block;
     padding: 25px 25px 0;
     color: #2a2a2a;
+}
+
+.devlog-list {
+    padding-top: 15px;
+}
+
+.devlog-card {
+    min-height: 100px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
+    // transition: all .5s;
 }
 
 
