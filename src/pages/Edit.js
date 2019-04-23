@@ -11,7 +11,7 @@ class Edit extends Component {
             <Layout>
                 <EditHeader />
                 <Main>
-                    <MyEditor />
+                    <MyEditor params={this.props}/>
                 </Main>
                 <Footer />
             </Layout>
