@@ -37,7 +37,7 @@ class MyEditor extends Component {
         const post = { title, subtitle, slug, tag, contents , cover_image_url};
 
         this.props.createPost(post);
-
+        this.props.params.history.push('/');
     }
 
     handleChange = (e) => {
@@ -72,10 +72,6 @@ class MyEditor extends Component {
             cover_image_url: MEDIA_URL+e.target.files[0].name
         })
         this.props.uploadFile(e.target.files[0])
-    }
-
-    handleBtn() {
-        console.log(this.state)
     }
 
     render() {
