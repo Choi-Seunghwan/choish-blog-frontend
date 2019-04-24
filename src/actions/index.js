@@ -34,6 +34,19 @@ export const fetchPosts = (filter) => {
     };
 }
 
+export function fetchDevlogs() {
+    let url = `${ROOT_URL}/api/devlogs/`;
+    return (dispatch) => {
+        axios.get(url).then(response => {
+            dispatch({
+                type: FETCH_DEVLOGS,
+                payload: response,
+            });
+        });
+    };
+}
+
+
 export const fetchPost = (slug) => {
     let url = `${ROOT_URL}/api/posts/post/${slug}`;
     return (dispatch) => {
@@ -73,6 +86,8 @@ export function createPost(post) {
         })
     }
 }
+
+
 
 export function uploadFile(file) {
     let url = `${ROOT_URL}/upload/${file.name}`;

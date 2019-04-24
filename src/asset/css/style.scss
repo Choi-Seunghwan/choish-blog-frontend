@@ -1,4 +1,4 @@
-
+@font-face { font-family: 'oACYCZno'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/oACYCZno.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 .outer {
     padding: 0 3vw;
@@ -19,6 +19,20 @@
 
 }
 
+.overlay {
+    opacity: 0;
+    position: absolute;
+    top:0; bottom: 0; left: 0; right: 0;
+    // background-color: rgb(53, 126, 236);
+    background-color: rgb(161, 161, 161);
+    transition: all 0.5s;
+}
+
+.overlay:hover {
+    opacity: 0.15;
+}
+
+
 //header
 .site-header {
     position: relative;
@@ -32,6 +46,7 @@
     margin: 0;
     font-size: 2.8rem;
     opacity: 0.95;
+    
 }
 
 .site-subtitle {
@@ -138,17 +153,45 @@
     background-size: cover;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
-    transition: all .5s;  
+    transition: all .5s;
+    position: relative;
+
+    
+}
+
+.post-card:hover{
+    transform: translate3D(0,-3px,0);
+}
+
+
+.post-card-title {
+    font-size: 1.3rem;
+    overflow: hidden;
+    font-family: 'oACYCZno';
+    margin:0;
+    word-break:break-all;
+}
+
+.post-card-subtitle {
+    font-size: 1rem;
+    overflow: hidden;
+    font-family: 'oACYCZno';
+}
+
+.post-card-tags {
+    font-weight: bold;
+    color: rgb(56, 120, 238);
 }
 
 .post-card-image-link{
     position: relative;
     display: block;
     overflow: hidden;
+    background: #bbbbbb no-repeat 50%;
 }
 
 .post-card-image {
-    width: auto;
+    width: 100%;
     height: 200px;
     background: #bbbbbb no-repeat 50%;
     background-size: cover;
@@ -176,10 +219,51 @@
 
 .devlog-card {
     min-height: 100px;
-    background-color: #2a2a2a;
+    background: white 50%;
+    background-size: cover;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
-    // transition: all .5s;
+    transition: all .5s;
+}
+
+.devlog-card:hover{
+    transform: translate3D(0,-3px,0);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    overflow: hidden;
+    font-family: 'oACYCZno';
+    margin:0;
+    word-break:break-all;
+}
+
+.card-image-link{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    min-height: 100px;
+    background: #bbbbbb no-repeat 50%;
+    background-size: cover;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+}
+
+.card-content-link {
+    position: relative;
+    display: block;
+    margin: 5px;
+    color: #2a2a2a;
 }
 
 
@@ -226,7 +310,8 @@
     position: relative;
     top: -20vh;
     font-size: 1.3rem;
-    background-color: #fafafa;
+    // background-color: #fafafa;
+    background-color: white;
     font-family: 'Nanum Myeongjo', serif;
     line-height: 2rem;
     overflow-x: hidden;
@@ -247,8 +332,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    
+    background-color: #3e4eda;
 }
 
 
@@ -277,6 +361,10 @@
         font-size: 3.0rem;
     }
 
+    .home .post-card {
+        flex: 1 1 290px;
+    }
+
     .home .post-card:nth-child(6n+1){
         flex: 1 1 100%;
         flex-direction: row;
@@ -296,6 +384,16 @@
     
     .home .post-card:nth-child(6n+1) .post-card-content-link {
         padding: 30px 40px 0px;
+    }
+
+    .home .post-card:nth-child(6n+1) .post-card-title {
+        font-size: 1.9rem;
+        font-family: 'oACYCZno';
+    }
+    
+    .home .post-card:nth-child(6n+1) .post-card-subtitle {
+        font-size: 1.2rem;
+        font-family: 'oACYCZno';
     }
 }
 

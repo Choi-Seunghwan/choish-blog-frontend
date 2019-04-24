@@ -3,11 +3,6 @@ import PostCard from './PostCard';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/index';
 
-// import img1 from '../asset/img/post1.jpg';
-// import img2 from '../asset/img/post2.jpg';
-// import img3 from '../asset/img/post3.jpg';
-
-
 class PostList extends Component {
 
 	fetchAndFilterPosts(){
@@ -32,7 +27,6 @@ class PostList extends Component {
 				|| this.props.params.match.params.tag !== prevProps.params.match.params.tag){
 					this.fetchAndFilterPosts()
 			}
-		
 	}
 
 	renderPostCard() {
