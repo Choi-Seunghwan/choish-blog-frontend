@@ -10,7 +10,7 @@ class DevlogCard extends Component {
         const detailUrl = "/devlog/" + devlog.slug;
         var image_card = <span />
 
-        if (devlog.cover_image_url != ""){
+        if (devlog.cover_image_url !== ""){
             image_card = (
                 <Link className="card-image-link" to={detailUrl}>
                     <div className="card-image" style={{ backgroundImage: `url(${devlog.cover_image_url})` }} />

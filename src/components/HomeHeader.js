@@ -10,7 +10,7 @@ class HomeHeader extends Component {
 			{/* <header className="site-header outer" style={{ backgroundImage: "url(" + mainImg + ")" }}></header> */}
 				<div className="inner" >
 					<div className="site-header-content">
-						<h1 className="site-title">Seunghwan Tech Blog</h1>
+						<h1 className="site-title">Choi Seunghwan Tech Blog</h1>
 						<h4 className="site-subtitle">keep calm and commit {"&"} push</h4>
 					</div>
 

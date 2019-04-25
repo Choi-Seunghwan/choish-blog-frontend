@@ -44,7 +44,6 @@ class DevlogList extends Component {
 
     render() {
         const { size: { width } } = this.props;
-        console.log(this.props);
 
         return (
             <div className="devlog-list">

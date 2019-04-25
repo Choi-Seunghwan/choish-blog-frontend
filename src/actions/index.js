@@ -95,7 +95,7 @@ export function uploadFile(file) {
     const formData = new FormData();
     formData.append('file', file)
 
-    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    // const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     return (dispatch) => {
         axios.post(url, formData).then(response => {
             dispatch({

@@ -3,10 +3,6 @@ import { fetchPost } from '../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
 
-import img1 from '../asset/img/post1.jpg';
-
-
-
 class PostDetail extends Component {
 
 	constructor(props){

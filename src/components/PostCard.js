@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 class PostCard extends Component {
 
     render() {
-
-        const imgUrl = require('../asset/img/post1.jpg')
         const detailUrl = "/post/" + this.props.post.slug
 
         return (
