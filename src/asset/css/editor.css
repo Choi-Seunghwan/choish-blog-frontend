@@ -7,9 +7,3 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
-.drf-main {
-    border: 1px solid rgb(102, 102, 102);
-    border-radius: 2px;
-    height: 75vh;
-}

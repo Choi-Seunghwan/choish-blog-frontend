@@ -1,49 +1,61 @@
 import React, { Component } from 'react';
-import { EditorState, convertToRaw } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
-import draftToHtml from 'draftjs-to-html';
-import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { connect } from 'react-redux';
 import { createPost, uploadFile, MEDIA_URL } from '../actions/index';
-
-import {TextField, Button }from '@material-ui/core/';
+import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core/';
 import '../asset/css/editor.css';
+
+// Require Editor JS files.
+import 'froala-editor/js/froala_editor.pkgd.min.js';
+
+// Require Editor CSS files.
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+
+// Require Font Awesome.
+import 'font-awesome/css/font-awesome.css';
+
+import FroalaEditor from 'react-froala-wysiwyg';
 
 class MyEditor extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            model : "temp model ",
+
             title: "",
             subtitle: "",
             slug: "",
             tag: "",
             cover_image_url: "",
             uploadedImages: [],
-            editorState: EditorState.createEmpty(),
+            config_type: "Type",
         }
+
     }
 
-    onEditorStateChange: Function = (editorState) => {
+    handleModelChange =  (model) => {
         this.setState({
-            editorState,
+          model: model
         });
-    };
+    }
 
     handleSubmit = (e) => {
-        e.preventDefault()
-        var contents = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
-        const { title, subtitle, slug, tag , cover_image_url} = this.state;
-        const post = { title, subtitle, slug, tag, contents , cover_image_url};
+        // e.preventDefault()
+        // var contents = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
+        // const { title, subtitle, slug, tag, cover_image_url, config_type } = this.state;
+        // const post = { title, subtitle, slug, tag, contents, cover_image_url };
+        // const config = { config_type, }
 
-        this.props.createPost(post);
-        this.props.params.history.push('/');
+        // this.props.createPost(post, config);
+        // this.props.params.history.push('/');
     }
 
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
+        console.log(this.state);
     }
 
     uploadCallback(file) {
@@ -59,7 +71,7 @@ class MyEditor extends Component {
 
         uploadedImages.push(imageObject);
         this.setState({ uploadedImages: uploadedImages })
-        
+
         return new Promise(
             (resolve, reject) => {
                 resolve({ data: { link: imageObject.src } });
@@ -69,7 +81,7 @@ class MyEditor extends Component {
 
     handleCoverImage = (e) => {
         this.setState({
-            cover_image_url: MEDIA_URL+e.target.files[0].name
+            cover_image_url: MEDIA_URL + e.target.files[0].name
         })
         this.props.uploadFile(e.target.files[0])
     }
@@ -79,15 +91,15 @@ class MyEditor extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit.bind(this)} >
-                    
+
                     <TextField
-                        className="textfeild" 
+                        className="textfeild"
                         label="Title"
                         placeholder="제목을 입력하세요."
                         variant="outlined"
                         margin="normal"
                         onChange={this.handleChange}
-                        name="title" 
+                        name="title"
                         value={this.state.title} />
 
                     <TextField
@@ -101,60 +113,75 @@ class MyEditor extends Component {
                         name="subtitle"
                         value={this.state.subtitle} />
                     <div className="flex-row">
-                    <TextField
-                        className="textfeild"
-                        label="Slug"
-                        placeholder="Slug를 입력하세요."
-                        variant="outlined"
-                        margin="normal"
-                        onChange={this.handleChange}
-                        name="slug"
-                        value={this.state.slug} /> 
+                        <TextField
+                            className="textfeild"
+                            label="Slug"
+                            placeholder="Slug를 입력하세요."
+                            variant="outlined"
+                            margin="normal"
+                            onChange={this.handleChange}
+                            name="slug"
+                            value={this.state.slug} />
 
-                    <TextField
-                        className="textfeild"
-                        label="Tag"
-                        placeholder="태그를 입력하세요."
-                        variant="outlined"
-                        margin="normal"
-                        onChange={this.handleChange}
-                        name="tag"
-                        value={this.state.tag} />
+                        <TextField
+                            className="textfeild"
+                            label="Tag"
+                            placeholder="태그를 입력하세요."
+                            variant="outlined"
+                            margin="normal"
+                            onChange={this.handleChange}
+                            name="tag"
+                            value={this.state.tag} />
                     </div>
 
                     <div className="flex-row">
-                    <input 
-                        type="file"
-                        id="outlined-button-file"
-                        style={{ display: 'none' }}
-                        onChange={this.handleCoverImage}
-                        name="file" 
-                        accept="image/x-png,image/gif,image/jpeg" />
-                    <label htmlFor="outlined-button-file">
-                        <Button variant="outlined" component="span">
-                            Upload Cover Image
+                        <input
+                            type="file"
+                            id="outlined-button-file"
+                            style={{ display: 'none' }}
+                            onChange={this.handleCoverImage}
+                            name="file"
+                            accept="image/x-png,image/gif,image/jpeg" />
+                        <label htmlFor="outlined-button-file">
+                            <Button variant="outlined" component="span">
+                                Upload Cover Image
                         </Button>
-                    </label>
-                    <Button variant="outlined" type="submit">Write</Button>
+                        </label>
+                        <Button variant="outlined" type="submit">Write</Button>
                     </div>
+                    <FormControl style={{ margin: "15px 0", width: "200px" }}>
+                        <InputLabel htmlFor="select-type-simple">Type</InputLabel>
+                        <Select
+                            value={this.state.config_type}
+                            onChange={this.handleChange}
+                            inputProps={{
+                                name: 'config_type',
+                                id: 'select-tpye-simple',
+                            }}
+                        >
+                            <MenuItem value={"post"}>Post</MenuItem>
+                            <MenuItem value={"devlog"}>Devlog</MenuItem>
+                        </Select>
+                    </FormControl>
 
-                    <Editor
-                        editorState={editorState}
-                        wrapperClassName="demo-wrapper"
-                        editorClassName="drf-main"
-                        onEditorStateChange={this.onEditorStateChange}
-                        toolbar={{ image: { uploadCallback: this.uploadCallback.bind(this) } }}
+                    <FroalaEditor
+                        tag='textarea'
+                        config={this.config}
+                        model={this.state.model}
+                        onModelChange={this.handleModelChange}
                     />
-                    
-                    <TextField
+
+
+
+                    {/* <TextField
                         className="textfeild"
                         label="draftToHTML"
                         multiline
                         disabled
                         variant="outlined"
                         margin="normal"
-                        value={draftToHtml(convertToRaw(editorState.getCurrentContent()))} />
-                    
+                        value={draftToHtml(convertToRaw(editorState.getCurrentContent()))} /> */}
+
                 </form>
             </div>
         );

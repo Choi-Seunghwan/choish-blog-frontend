@@ -59,9 +59,33 @@ export const fetchPost = (slug) => {
     }
 }
 
-export function createPost(post) {
-    let url = `${ROOT_URL}/api/posts/new/`;
-    
+export const fetchDevlog = (slug) => {
+    let url = `${ROOT_URL}/api/devlogs/devlog/${slug}`;
+    return (dispatch) => {
+        axios.get(url).then(response => {
+            dispatch({
+                type: FETCH_POST,
+                payload: response,
+            })
+        })
+    }
+}
+
+
+export function createPost(post, config) {
+    let url = '';
+    let type = null;
+
+    if (config.config_type === "post"){
+        url = `${ROOT_URL}/api/posts/new/`;
+        type = CREATE_POST;
+    }
+    else{
+        url = `${ROOT_URL}/api/devlogs/new/`;
+        type = CREATE_DEVLOG;
+    }
+
+
     // console.log(post.uploadedImages[0].file);
     // let myfile = post.uploadedImages[0].file;
     // var myblob = new Blob([myfile], {type: 'image/png'});
@@ -78,7 +102,7 @@ export function createPost(post) {
     return (dispatch) => {
         axios.post(url, post).then(response => {
             dispatch({
-                type: CREATE_POST,
+                type: type,
                 payload: response
             })
             // console.log("response")
