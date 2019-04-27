@@ -6,6 +6,7 @@ module.exports = {
   mode: 'production',  
   entry: './src/index.js',
   output: {
+    publicPath:'/',
     filename: 'bundle.js'
   },
   devtool: 'inline-source-map',
@@ -40,6 +41,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      publicPath:'/',
       template: 'public/index.html',
       favicon: 'public/favicon.ico'
     }),
