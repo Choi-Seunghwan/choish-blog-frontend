@@ -64,7 +64,7 @@ export const fetchDevlog = (slug) => {
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
-                type: FETCH_POST,
+                type: FETCH_DEVLOG,
                 payload: response,
             })
         })

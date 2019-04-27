@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { fetchPost } from '../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
+import { Chip } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 class PostDetail extends Component {
 
@@ -12,7 +14,7 @@ class PostDetail extends Component {
 		};
 	}
 
-	addEventListener = e => {
+	addEventListener = (e) => {
 		if (window.scrollY > 250 ) {
 			this.setState({opacity: 0})
 		}
@@ -42,20 +44,30 @@ class PostDetail extends Component {
 		return (
 			<div>
 				<div className="parallax-outer">
-					<figure className="parallax-background" style={{ backgroundImage: `url(${post.cover_image_url})` }}>	
+					<figure className="parallax-background vh100" style={{ backgroundImage: `url(${post.cover_image_url})` }}>	
 						<header className="post-detail-header" style={{opacity: this.state.opacity}} >
-							<h1 className="post-detail-header-title">{post.title}</h1>
-							<h4 className="post-detail-header-subtitle">{post.subtitle}</h4>
+							<h1 className="detail-header-title">{post.title}</h1>
+							<h4 className="detail-header-subtitle">{post.subtitle}</h4>
 						</header>
 					</figure>
-
 				</div>
 
-
-				<section className="post-detail-contents">
+				<section className="detail-contents">
 					<div className="content-markdown">
 						<div dangerouslySetInnerHTML={{ __html: markdown }} />
 						{post.subtitle}
+					</div>
+
+					
+					<div className="detail-contetns-tags">
+						{/* need modification tags array. */}
+						<Link to={"/tag/" + post.tag}>
+							<Chip
+								className="detail-contents-tag"
+								label={<h5>{"# "+post.tag}</h5>}
+								variant="outlined"
+							/>
+						</Link>
 					</div>
 				</section>
 			</div>

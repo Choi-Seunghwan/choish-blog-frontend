@@ -32,6 +32,14 @@
     opacity: 0.15;
 }
 
+.vh100 { //parallax-background vh
+    min-height: 110vh;
+}
+
+.vh60 { //parallax-background vh
+    min-height: 60vh;
+}
+
 
 //header
 .site-header {
@@ -275,6 +283,7 @@
 
 .post-detail-header {
     max-width: 1040px;
+    min-width: 300px;
     margin: 0;
     text-align: center;
     color: white;
@@ -290,20 +299,39 @@
     overflow: hidden;
 }
 
-.post-detail-header-title {
+.detail-header {
+    max-width: 1040px;
+    min-width: 300px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    position: absolute;
+    transition: all 0.5s;
+    left: 50%;
+    top: -17%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+}
+
+.detail-header-title {
     font-size: 2.4rem;
     margin:0;
     opacity: 0.95;
 }
-.post-detail-header-subtitle {
+.detail-header-subtitle {
     font-size: 1.0rem;
     margin: 10px 0 0 0;
     color: white;
     opacity: 0.9;
 }
 
-.post-detail-contents {
-    padding: 10px;
+.detail-contents {
+    padding: 25px;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
     transition: all .5s;
@@ -314,7 +342,16 @@
     background-color: white;
     font-family: 'Nanum Myeongjo', serif;
     line-height: 2rem;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.detail-contetns-tags {
+    margin-top: 150px;
+}
+
+.detail-contents-tag {
+    color: #3878ee !important;
+    font-size: 1.2rem !important;
 }
 
 .parallax-outer {
@@ -326,7 +363,6 @@
 }
 
 .parallax-background {
-    min-height: 110vh;
     margin:0;
     background-attachment: fixed;
     background-position: center;
@@ -350,7 +386,10 @@
 
 @media screen and (min-width: 850px) {
     
-    
+    .detail-header {
+        width: 800px;
+        min-width: 800px;
+    }
 
     .post-detail-header {
         width: 800px;
