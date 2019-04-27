@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 class PostDetail extends Component {
 
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			opacity: 1,
@@ -15,14 +15,14 @@ class PostDetail extends Component {
 	}
 
 	addEventListener = (e) => {
-		if (window.scrollY > 250 ) {
-			this.setState({opacity: 0})
+		if (window.scrollY > 250) {
+			this.setState({ opacity: 0 })
 		}
-		else if (window.scrollY > 100  ) {
-			this.setState({opacity: 0.5})
+		else if (window.scrollY > 100) {
+			this.setState({ opacity: 0.5 })
 		}
 		else {
-			this.setState({opacity: 1})
+			this.setState({ opacity: 1 })
 		}
 	}
 
@@ -43,9 +43,9 @@ class PostDetail extends Component {
 
 		return (
 			<div>
-				<div className="parallax-outer">
-					<figure className="parallax-background vh100" style={{ backgroundImage: `url(${post.cover_image_url})` }}>	
-						<header className="post-detail-header" style={{opacity: this.state.opacity}} >
+				<div className="parallax-outer marginbottom-20vh">
+					<figure className="parallax-background vh100" style={{ backgroundImage: `url(${post.cover_image_url})` }}>
+						<header className="post-detail-header" style={{ opacity: this.state.opacity }} >
 							<h1 className="detail-header-title">{post.title}</h1>
 							<h4 className="detail-header-subtitle">{post.subtitle}</h4>
 						</header>
@@ -53,21 +53,27 @@ class PostDetail extends Component {
 				</div>
 
 				<section className="detail-contents">
+					
 					<div className="content-markdown">
 						<div dangerouslySetInnerHTML={{ __html: markdown }} />
 						{post.subtitle}
 					</div>
 
-					
+					<div className="detail-contents-discription">
 					<div className="detail-contetns-tags">
-						{/* need modification tags array. */}
-						<Link to={"/tag/" + post.tag}>
-							<Chip
-								className="detail-contents-tag"
-								label={<h5>{"# "+post.tag}</h5>}
-								variant="outlined"
-							/>
-						</Link>
+							{/* need modification tags array. */}
+							<Link to={"/tag/" + post.tag}>
+								<Chip
+									style={{heigh: "15px !important"}}
+									className="detail-contents-tag"
+									label={<p>{"# " + post.tag}</p>}
+									variant="outlined"
+								/>
+							</Link>
+						</div>
+						<span>{post.title}</span><br/>
+						{/* Author & time  */}
+						<span>{"by Choi Seunghwan. " + post.created_at.split("T")[0]}</span>
 					</div>
 				</section>
 			</div>

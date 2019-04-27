@@ -40,6 +40,9 @@
     min-height: 60vh;
 }
 
+.marginbottom-20vh { // for detail page paper style.
+    margin-bottom: -20vh;
+}
 
 //header
 .site-header {
@@ -278,7 +281,8 @@
 //detail
 .post-detail {
     position: relative;
-    z-index: 20;
+    z-index: 1;
+    background-color: white;
 }
 
 .post-detail-header {
@@ -331,27 +335,31 @@
 }
 
 .detail-contents {
-    padding: 25px;
+    padding: 50px 25px;
     border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
     transition: all .5s;
     position: relative;
-    top: -20vh;
     font-size: 1.3rem;
-    // background-color: #fafafa;
     background-color: white;
-    font-family: 'Nanum Myeongjo', serif;
     line-height: 2rem;
     overflow: hidden;
+    color: #3b3b3b;
+}
+
+.detail-contents-discription {
+    padding: 10px;
+    margin-top: 50px;
+    font-size: 1.0rem !important;
+
 }
 
 .detail-contetns-tags {
-    margin-top: 150px;
+    margin-bottom: 10px;
 }
 
 .detail-contents-tag {
     color: #3878ee !important;
-    font-size: 1.2rem !important;
+    font-size: 0.9rem !important;
 }
 
 .parallax-outer {
@@ -371,7 +379,34 @@
     background-color: #3e4eda;
 }
 
+//Author
+.author-wrap {
+    color: #666;
+    position: relative;
+}
 
+.author-inner {
+    padding: 25px;
+    position: relative;
+}
+
+.author-name {
+    font-size: 2.0rem;
+}
+
+.author-comment {
+    font-size: 1rem;
+}
+
+.author-avatar {
+    position: absolute !important;
+    width: 80px !important;
+    height: 80px !important;
+    top: -35px;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%,0);
+}
 
 //footer
 .site-footer {

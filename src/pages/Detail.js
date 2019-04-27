@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import PostDetail from '../components/PostDetail';
 import DisqusThread from '../components/DisqusThread';
 import DevlogDetail from '../components/DevlogDetail';
+import Author from '../components/author';
 
 class Detail extends Component {
 
@@ -26,6 +27,7 @@ class Detail extends Component {
                 <Header />
                 <Main>
                     { this.renderDetailPage() }
+                    <Author />
                     <DisqusThread />
                 </Main>
                 <Footer />

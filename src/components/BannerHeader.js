@@ -11,8 +11,8 @@ class BannerHeader extends Component {
                 
                 <div className="inner" >
 					<div className="site-header-content">
-						<h1 className="site-title">Banner {this.props.title} </h1>
-						<h4 className="site-subtitle">Banner... {this.props.subtitle}</h4>
+						<h1 className="site-title">{this.props.title} </h1>
+						<h4 className="site-subtitle">{this.props.subtitle}</h4>
 					</div>
 				</div>
 			</header>

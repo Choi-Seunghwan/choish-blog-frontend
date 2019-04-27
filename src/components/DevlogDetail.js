@@ -24,7 +24,7 @@ class DevlogDetail extends Component {
 
         return (
             <div>
-                <div className="parallax-outer">
+                <div className="parallax-outer marginbottom-20vh">
 					<figure className="parallax-background vh60" style={{ backgroundImage: `url(${devlog.cover_image_url})` }}>	
 						<header className="detail-header">
 							<h1 className="detail-header-title">{devlog.title}</h1>
@@ -39,15 +39,21 @@ class DevlogDetail extends Component {
 						{devlog.subtitle}
 					</div>
 
-                    <div className="detail-contetns-tags">
-						{/* need modification tags array. */}
-						<Link to={"/devlog/"}>
-							<Chip
-								className="detail-contents-tag"
-								label={<h5>{"# "+devlog.tag}</h5>}
-								variant="outlined"
-							/>
-						</Link>
+                    <div className="detail-contents-discription">
+					<div className="detail-contetns-tags">
+							{/* need modification tags array. */}
+							<Link to={"/devlog/"}>
+								<Chip
+									style={{heigh: "15px !important"}}
+									className="detail-contents-tag"
+									label={<p>{"# " + devlog.tag}</p>}
+									variant="outlined"
+								/>
+							</Link>
+						</div>
+						<span>{devlog.title}</span><br/>
+						{/* Author & time  */}
+						<span>{"by Choi Seunghwan. " + devlog.created_at.split("T")[0]}</span>
 					</div>
 				</section>
             </div>
