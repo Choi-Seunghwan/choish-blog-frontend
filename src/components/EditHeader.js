@@ -8,9 +8,8 @@ class EditHeader extends Component {
 		return (
 			<header className="site-header outer" style={{ backgroundImage: "url(" + editImg + ")" }}>
 			{/* <header className="site-header outer banner"> */}
-                <NavBar />
-                
                 <div className="inner" >
+					<NavBar />
 					<div className="site-header-content">
 						<h1 className="site-title">Editor </h1>
 						<h4 className="site-subtitle">좋은 글을 쓰자.</h4>

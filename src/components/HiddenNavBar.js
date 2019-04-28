@@ -1,0 +1,89 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { LinearProgress } from '@material-ui/core';
+
+
+class HiddenNavBar extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			transform: "translateY(-100%)",
+			scrollRate: 50,
+		}
+	}
+
+	scrollEventListener = (e) => {
+		let windowScrollY = window.scrollY;
+		let innerHeight = window.innerHeight;
+		let bodyElement = document.getElementById('root');
+		let root = bodyElement.getBoundingClientRect();
+		let heightHtml = root.height;
+		let scrollMax = Math.ceil( heightHtml - innerHeight);
+
+
+		// scroll event. hiddenNav visible or unvisible
+		if (windowScrollY < 250) {
+			this.setState({ transform: "translateY(-100%)" })
+		}else {
+			this.setState({ transform: "translateY(0%)"})
+		}
+		
+		// scroll evnet. get progressbar scoll rate
+		let scrollRate = parseInt( (windowScrollY / scrollMax) * 100, 10);
+		this.setState({scrollRate: scrollRate })
+	}
+
+	setTitle() {
+		let title = "title";
+		let path = window.location.pathname.split('/')[1];
+
+        if (path === "post")
+            title = this.props.post_title;
+        else if (path == "devlog")
+            title = this.props.devlog_title;
+		
+		return title;
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.scrollEventListener)
+	}
+
+	render() {
+	
+		const title = this.setTitle();
+		return (
+			<nav className={"hidden-nav"} style={{transform : this.state.transform}}>
+				{/* <div className="hidden-nav-menu"><i className="fa fa-bars fa-2x"></i></div> */}
+				<Link to="/">
+					<div className="hidden-nav-logo">
+						<span>SH Tech Blog</span>
+					</div>
+				</Link>
+				<div className="hidden-nav-title">
+					<span>{ title }</span>
+				</div>
+				
+				<div className="hidden-nav-end">
+					<div className="nav-icons">
+						<a className="nav-icon" target="_blank" rel="noopener noreferrer"
+							href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-2x"></i></a>
+						<Link className="nav-icon" to="/"><i className="fa fa-linkedin fa-2x"></i></Link>
+					</div>
+				</div>
+				<div className="hidden-nav-progressbar">
+					<LinearProgress variant="determinate" value={this.state.scrollRate}/>
+				</div>
+			</nav>
+		)
+	}
+}
+
+const mapStateToProps = (state) => ({
+	post_title: state.posts.title,
+	devlog_title: state.devlogs.title,
+})
+
+
+export default connect(mapStateToProps,{})(HiddenNavBar);;

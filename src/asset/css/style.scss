@@ -84,7 +84,7 @@
 }
 
 //Nav
-.site-nav {
+.nav {
     display: flex;
     position: relative;
     overflow-y: hidden; 
@@ -120,7 +120,7 @@
     padding: 10px
 }
 
-.site-nav-left {
+.nav-left {
     align-items: center;
     overflow-x: auto;
     margin-right: 10px;
@@ -129,7 +129,7 @@
     white-space: nowrap;
 }
 
-.site-nav-right {
+.nav-right {
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -140,6 +140,57 @@
     line-height: .75em;
     vertical-align: -15%;
 }
+
+.hidden-nav {
+    position: fixed;
+    background-color: white;
+    color: black;
+    opacity: 0.9;
+    height: 55px;
+    z-index: 300;
+    top: 0;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    transition: all 0.5s ;
+    display: flex;
+    align-items: center;
+}
+
+.hidden-nav-menu {
+    margin: 0 0 0 30px;
+    line-height: 1rem;
+}
+
+.hidden-nav-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 0 25px;
+    line-height: 2rem;
+}
+
+.hidden-nav-title {
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 0 25px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.hidden-nav-end {
+    justify-content: flex-end;
+    margin: 0 20px 0 0;
+}
+
+.hidden-nav-progressbar {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+}
+
 
 //post
 
@@ -402,7 +453,7 @@
     position: absolute !important;
     width: 80px !important;
     height: 80px !important;
-    top: -35px;
+    top: -40px;
     z-index: 1;
     left: 50%;
     transform: translate(-50%,0);

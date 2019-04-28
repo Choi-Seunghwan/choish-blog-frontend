@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
+import HiddenNavBar from './HiddenNavBar';
 
 class Header extends Component {
 
@@ -8,6 +9,7 @@ class Header extends Component {
             <header className="site-header outer">
                 <div className="inner" >
                     <NavBar />
+                    <HiddenNavBar />
                 </div>
             </header>
         )

@@ -7,9 +7,8 @@ class TagHeader extends Component {
 		return (
 			// <header className="site-header outer" style={{ backgroundImage: "url(" + mainImg + ")" }}>
 			<header className="site-header outer banner">
-                <NavBar />
-                
                 <div className="inner" >
+					<NavBar />
 					<div className="site-header-content">
 						<h1 className="site-title">{this.props.params.match.params.tag}</h1>
 						<h4 className="site-subtitle">Tag..</h4>
