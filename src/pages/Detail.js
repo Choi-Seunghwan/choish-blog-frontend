@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
+import SideMenu from '../components/SideMenu';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import PostDetail from '../components/PostDetail';
 import DisqusThread from '../components/DisqusThread';
 import DevlogDetail from '../components/DevlogDetail';
 import Author from '../components/author';
+
 
 class Detail extends Component {
 
@@ -25,6 +27,7 @@ class Detail extends Component {
         return (
             <Layout>
                 <Header />
+                <SideMenu />
                 <Main>
                     { this.renderDetailPage() }
                     <Author />

@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Layout from '../components/Layout';
 import Main from '../components/Main';
 import BannerHeader from '../components/BannerHeader';
+import SideMenu from '../components/SideMenu';
 import DevlogList from '../components/DevlogList';
 
 class Tag extends Component {
@@ -10,6 +11,7 @@ class Tag extends Component {
         return (
             <Layout>
                 <BannerHeader params={this.props} title={"DevLog"} subtitle={"DevLog..."}/>
+                <SideMenu />
                 <Main>
                     <DevlogList />
                 </Main>

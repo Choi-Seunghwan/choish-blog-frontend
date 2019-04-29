@@ -191,6 +191,50 @@
     top: 50px;
 }
 
+//sidemenu
+
+.sidemenu-logo {
+    text-align: center;
+    min-width: 280px;
+}
+
+.sidemenu-logo-title {
+    font-size: 1.2rem;
+    margin : 20px 0 0 0;
+}
+
+.sidemenu-tab {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 100px;
+    background-color: #3878ee;
+    color: white;
+    z-index: 299;
+    transition: all 1s;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.sidemenu-draw {
+    position:fixed;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 100px;
+    background-color: #3878ee;
+    color: white;
+    top: 230px;
+    right: -20px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.sidemenu-paper {
+    overflow: visible !important;
+}
+
 
 //post
 
@@ -242,7 +286,7 @@
 
 .post-card-tags {
     font-weight: bold;
-    color: rgb(56, 120, 238);
+    color: #3878ee;
 }
 
 .post-card-image-link{
