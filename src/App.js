@@ -15,7 +15,7 @@ class App extends Component {
                 <Route path="/devlog/:slug" component={Detail} />
                 <Route path="/Tag/:tag" component={Tag} />
                 <Route path="/devlog" component={Devlog} />
-                <Route path="/edit" component={Edit} />
+                {/* <Route path="/edit" component={Edit} /> */}
                 <Route path="/test" component={Test} />
                 </Switch>
             </Router>

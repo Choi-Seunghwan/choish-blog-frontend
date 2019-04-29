@@ -7,10 +7,15 @@ import SideMenu from '../components/SideMenu';
 import DevlogList from '../components/DevlogList';
 
 class Tag extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+
     render(){
         return (
             <Layout>
-                <BannerHeader params={this.props} title={"DevLog"} subtitle={"DevLog..."}/>
+                <BannerHeader params={this.props} title={"DevLog"} subtitle={"기록되지 않은 것은 기억되지 않는다"}/>
                 <SideMenu />
                 <Main>
                     <DevlogList />

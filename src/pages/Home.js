@@ -7,6 +7,12 @@ import PostList from '../components/PostList';
 import SideMenu from '../components/SideMenu';
 
 class Home extends Component {
+
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+
     render(){
         return (
             <Layout>

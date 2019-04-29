@@ -200,7 +200,13 @@
 
 .sidemenu-logo-title {
     font-size: 1.2rem;
-    margin : 20px 0 0 0;
+    font-weight: bold;
+    margin : 40px 0 0 0;
+}
+
+.sidemenu-logo-subtitle {
+    font-size: 1rem;
+    margin : 0 0 20px 0;
 }
 
 .sidemenu-tab {
@@ -209,7 +215,8 @@
     align-items: center;
     width: 20px;
     height: 100px;
-    background-color: #3878ee;
+    background-color: #99a5b1;
+    opacity: 0.9;
     color: white;
     z-index: 299;
     transition: all 1s;
@@ -223,7 +230,8 @@
     align-items: center;
     width: 20px;
     height: 100px;
-    background-color: #3878ee;
+    background-color: #99a5b1;
+    opacity: 0.9;
     color: white;
     top: 230px;
     right: -20px;
@@ -233,6 +241,10 @@
 
 .sidemenu-paper {
     overflow: visible !important;
+}
+
+.sidemenu-text {
+    text-align: center;
 }
 
 
@@ -334,6 +346,15 @@
 
 .devlog-card:hover{
     transform: translate3D(0,-3px,0);
+}
+
+.devlog-card-title {
+    font-size: 1.3rem;
+    font-weight: normal;
+    overflow: hidden;
+    font-family: 'oACYCZno';
+    margin:0;
+    word-break:break-all;
 }
 
 .card-title {

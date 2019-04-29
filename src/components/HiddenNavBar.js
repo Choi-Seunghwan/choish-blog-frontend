@@ -41,7 +41,9 @@ class HiddenNavBar extends Component {
         if (path === "post")
             title = this.props.post_title;
         else if (path == "devlog")
-            title = this.props.devlog_title;
+			title = this.props.devlog_title;
+		else
+			title = this.props.title;
 		
 		return title;
 	}
@@ -69,7 +71,8 @@ class HiddenNavBar extends Component {
 					<div className="nav-icons">
 						<a className="nav-icon" target="_blank" rel="noopener noreferrer"
 							href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-2x"></i></a>
-						<Link className="nav-icon" to="/"><i className="fa fa-linkedin fa-2x"></i></Link>
+						<a className="nav-icon" target="_blank" rel="noopener noreferrer"
+							href="https://www.linkedin.com/in/seunghwan-choi-tech/"><i className="fa fa-linkedin fa-2x"></i></a>
 					</div>
 				</div>
 				<div className="hidden-nav-progressbar">

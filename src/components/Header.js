@@ -9,7 +9,7 @@ class Header extends Component {
             <header className="site-header outer">
                 <div className="inner" >
                     <NavBar />
-                    <HiddenNavBar />
+                    <HiddenNavBar title={this.props.title}/>
                 </div>
             </header>
         )

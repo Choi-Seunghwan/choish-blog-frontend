@@ -7,6 +7,11 @@ import SideMenu from '../components/SideMenu';
 import MyEditor from '../components/MyEditor';
 
 class Edit extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+
     render(){
         return (
             <Layout>

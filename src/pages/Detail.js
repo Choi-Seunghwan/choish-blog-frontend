@@ -23,6 +23,10 @@ class Detail extends Component {
             return(<div></div>)
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+
     render() {
         return (
             <Layout>

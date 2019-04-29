@@ -7,6 +7,11 @@ import TagHeader from '../components/TagHeader';
 import SideMenu from '../components/SideMenu';
 
 class Tag extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+
     render(){
         return (
             <Layout>

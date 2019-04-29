@@ -9,17 +9,17 @@ class NavBar extends Component {
 				<div className="nav-left">
 					<ul className="nav-ul">
 						<li className="nav-li"><Link to="/">Home</Link></li>
-						<li className="nav-li"><Link to="/">About</Link></li>
-						<li className="nav-li"><Link to="/tag/tag1">Python</Link></li>
+						<li className="nav-li"><Link to="/about">About</Link></li>
+						<li className="nav-li"><Link to="/tag/project">Project</Link></li>
 						<li className="nav-li"><Link to="/devlog">Devlog</Link></li>
-						<li className="nav-li"><Link to="/edit">Edit</Link></li>
+						<li className="nav-li"><Link to="/tag/IT">IT</Link></li>
 					</ul>
 				</div>
 
 				<div className="nav-right">
 					<div className="nav-icons">
 						<a className="nav-icon" target="_blank" rel="noopener noreferrer" href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-lg"></i></a>
-						<Link className="nav-icon" to="/"><i className="fa fa-linkedin fa-lg"></i></Link>
+						<a className="nav-icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/seunghwan-choi-tech/"><i className="fa fa-linkedin fa-lg"></i></a>
 					</div>
 				</div>
 			</nav>

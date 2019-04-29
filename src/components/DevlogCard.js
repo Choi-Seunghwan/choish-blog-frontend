@@ -25,7 +25,7 @@ class DevlogCard extends Component {
                     <Link className="card-content-link" to={detailUrl}>
                         <header className="post-card-header">
                             <span className="post-card-tags">{devlog.tag}</span>
-                            <h2 className="card-title">{devlog.title}</h2>
+                            <h2 className="devlog-card-title">{devlog.title}</h2>
                         </header>
                         <section className="">
                             {/* <p>{devlog.subtitle}</p> */}
