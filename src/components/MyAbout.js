@@ -40,7 +40,7 @@ class MyAbout extends Component {
                     <div className="content-markdown">
                         <h2>최승환 (Choi Seunghwna)</h2>
                         <p>
-                            안녕하세요 최승환입니다 ^^.
+                            안녕하세요 최승환입니다.
                         </p>
                         <p>
                             어릴 적 레고를 조립하는 것처럼,
@@ -52,7 +52,7 @@ class MyAbout extends Component {
                             또한 최근엔 웹 앱 서비스, Frontend, Backend에 <span className="mouse-text" onClick={this.handleclick}>흥미</span>가 생겨 Toy Project를 진행하고 있습니다.
                         </p>
                         <p>
-                            그럼 다들 좋은 하루 되세요. 방문해 주셔서 감사합니다 ^^.
+                            그럼 다들 좋은 하루 되세요. 방문해 주셔서 감사합니다.
                         </p>
                         <p>
                             - May 1, 2019

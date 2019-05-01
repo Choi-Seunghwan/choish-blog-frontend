@@ -15,13 +15,12 @@ class PostCard extends Component {
                 </Link>
                 <div className="post-card-content">
                     <Link className="post-card-content-link" to={detailUrl}>
-                        <header className="post-card-header">
-                            <span className="post-card-tags">{this.props.post.tag}</span>
+                        <header className="card-header">
+                            <span className="card-tags">{this.props.post.tag}</span>
                             <h2 className="post-card-title">{this.props.post.title}</h2>
                         </header>
                         <section className="post-card-subtitle">
                             <p>{this.props.post.subtitle}</p>
-                            <div></div>
                         </section>
 
                     </Link>

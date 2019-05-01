@@ -42,7 +42,7 @@ class DevlogDetail extends Component {
                     <div className="detail-contents-discription">
 					<div className="detail-contetns-tags">
 							{/* need modification tags array. */}
-							<Link to={"/devlog/"}>
+							<Link to={"/devlog/"} style={{textDecoration: "none"}}>
 								<Chip
 									style={{heigh: "15px !important"}}
 									className="detail-contents-tag"
@@ -56,7 +56,7 @@ class DevlogDetail extends Component {
 						<span>{"by Choi Seunghwan. " + devlog.created_at.split("T")[0]}</span>
 					</div>
 				</section>
-            </div>
+            </div>	
         )
     }
 

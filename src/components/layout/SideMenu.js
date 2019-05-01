@@ -30,7 +30,7 @@ class SideMenu extends Component {
 
     render() {
         return (
-            <header>
+            <nav>
                 <Drawer classes={{ paper: 'sidemenu-paper' }}
                     open={this.state.left} onClose={this.toggleDrawer('left', false)}>
                     <div
@@ -84,7 +84,7 @@ class SideMenu extends Component {
                     <i className="fa fa-chevron-right" style={{ marginLeft: "3px" }} />  </div>
 
 
-            </header>
+            </nav>
         )
     }
 

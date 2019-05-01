@@ -15,7 +15,7 @@ class Tag extends Component {
     render(){
         return (
             <Layout>
-                <BannerHeader params={this.props} title={"DevLog"} subtitle={"기록되지 않은 것은 기억되지 않는다"}/>
+                <BannerHeader path="devlog" title={"DevLog"} subtitle={"기록되지 않은 것은 기억되지 않는다"}/>
                 <SideMenu />
                 <Main>
                     <DevlogList />

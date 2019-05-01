@@ -7,7 +7,6 @@ class EditHeader extends Component {
 	render() {
 		return (
 			<header className="site-header outer" style={{ backgroundImage: "url(" + editImg + ")" }}>
-			{/* <header className="site-header outer banner"> */}
                 <div className="inner" >
 					<NavBar />
 					<div className="site-header-content">

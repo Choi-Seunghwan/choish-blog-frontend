@@ -13,8 +13,8 @@
 }
 
 .mouse-text {
-  color: #6495ed;
   text-decoration: underline;
+  text-decoration-color: #6495ed;
 }
 
 @keyframes implode {
