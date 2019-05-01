@@ -29,13 +29,19 @@ module.exports = {
       test: /\.json$/,
 		  loader: 'json-loader'
     },
-	{
+	  {
         test: /\.(s*)css$/, // match any .scss or .css file, 
         use: [
           "style-loader", 
           "css-loader", 
           "sass-loader" 
         ]
+    },
+    {
+      test: /\.html$/,
+      use: [
+        "html-loader",
+      ]
     },
     ]
   },

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Footer from '../components/Footer'
-import Layout from '../components/Layout';
-import Main from '../components/Main';
-import SideMenu from '../components/SideMenu';
+import Footer from '../components/layout/Footer'
+import Layout from '../components/layout/Layout';
+import Main from '../components/layout/Main';
+import SideMenu from '../components/layout/SideMenu';
 import MyAbout from '../components/MyAbout';
-import Header from '../components/Header';
+import Header from '../components/layout/Header';
 class About extends Component {
 
     componentDidMount() {

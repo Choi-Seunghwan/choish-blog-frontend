@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Footer from '../components/Footer'
-import Layout from '../components/Layout';
-import Main from '../components/Main';
-import EditHeader from '../components/EditHeader';
-import SideMenu from '../components/SideMenu';
-import MyEditor from '../components/MyEditor';
+import Footer from '../components/layout/Footer'
+import Layout from '../components/layout/Layout';
+import Main from '../components/layout/Main';
+import EditHeader from '../components/editor/EditHeader';
+import SideMenu from '../components/layout/SideMenu';
+import MyEditor from '../components/editor/MyEditor';
 
 class Edit extends Component {
 

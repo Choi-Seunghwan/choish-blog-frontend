@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDevlogs } from '../actions/index';
+import { fetchDevlogs } from '../../actions/index';
 import DevlogCard from './DevlogCard';
 import StackGrid from "react-stack-grid";
 import sizeMe from 'react-sizeme';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
-import editImg from '../asset/img/editor.jpg'
+import NavBar from '../layout/NavBar';
+import editImg from '../../asset/img/editor.jpg'
 
 class EditHeader extends Component {
 

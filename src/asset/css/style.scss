@@ -462,6 +462,16 @@
     color: #3b3b3b;
 }
 
+.detail-contents a {
+    
+    text-decoration: underline ;
+    text-decoration-color: #6495ed;
+}
+
+.detail-contents a:hover {
+    color: #6495ed ;
+}
+
 .detail-contents-discription {
     padding: 10px;
     margin-top: 50px;

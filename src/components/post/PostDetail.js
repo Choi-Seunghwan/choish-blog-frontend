@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchPost } from '../actions/index';
+import { fetchPost } from '../../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
 import { Chip } from '@material-ui/core';

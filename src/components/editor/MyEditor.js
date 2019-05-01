@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPost, uploadFile, MEDIA_URL } from '../actions/index';
+import { createPost, uploadFile, MEDIA_URL } from '../../actions/index';
 import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core/';
-import '../asset/css/editor.css';
+import '../../asset/css/editor.css';
 
 // Require Editor JS files.
 import 'froala-editor/js/froala_editor.pkgd.min.js';

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Footer from '../components/Footer'
-import Layout from '../components/Layout';
-import Main from '../components/Main';
-import BannerHeader from '../components/BannerHeader';
-import SideMenu from '../components/SideMenu';
-import DevlogList from '../components/DevlogList';
+import Footer from '../components/layout/Footer'
+import Layout from '../components/layout/Layout';
+import Main from '../components/layout/Main';
+import BannerHeader from '../components/layout/BannerHeader';
+import SideMenu from '../components/layout/SideMenu';
+import DevlogList from '../components/devlog/DevlogList';
 
 class Tag extends Component {
 

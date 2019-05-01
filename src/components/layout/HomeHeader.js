@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import mainImg from '../asset/img/editor.jpg'
+import mainImg from '../../asset/img/editor.jpg'
 import NavBar from './NavBar';
 
 class HomeHeader extends Component {

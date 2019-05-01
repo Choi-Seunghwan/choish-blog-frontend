@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import SideMenu from '../components/SideMenu';
-import Main from '../components/Main';
-import Footer from '../components/Footer';
-import PostDetail from '../components/PostDetail';
+import Layout from '../components/layout/Layout';
+import Header from '../components/layout/Header';
+import SideMenu from '../components/layout/SideMenu';
+import Main from '../components/layout/Main';
+import Footer from '../components/layout/Footer';
+import PostDetail from '../components/post/PostDetail';
 import DisqusThread from '../components/DisqusThread';
-import DevlogDetail from '../components/DevlogDetail';
+import DevlogDetail from '../components/devlog/DevlogDetail';
 import Author from '../components/author';
 
 
