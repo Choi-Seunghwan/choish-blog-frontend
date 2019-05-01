@@ -14,7 +14,7 @@ class About extends Component {
     render() {
         return (
             <Layout>
-                <Header  title={"About me"} />
+                <Header  title={"About Choi Seunghwan."} />
                 <SideMenu />
                 <Main>
                     <MyAbout />

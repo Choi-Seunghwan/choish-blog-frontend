@@ -62,7 +62,7 @@ class PostDetail extends Component {
 					<div className="detail-contents-discription">
 					<div className="detail-contetns-tags">
 							{/* need modification tags array. */}
-							<Link to={"/tag/" + post.tag}>
+							<Link to={"/tag/" + post.tag} style={{textDecoration: "none"}}>
 								<Chip
 									style={{heigh: "15px !important"}}
 									className="detail-contents-tag"
