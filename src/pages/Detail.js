@@ -7,7 +7,7 @@ import Footer from '../components/layout/Footer';
 import PostDetail from '../components/post/PostDetail';
 import DisqusThread from '../components/DisqusThread';
 import DevlogDetail from '../components/devlog/DevlogDetail';
-import Author from '../components/author';
+import Author from '../components/Author';
 
 
 class Detail extends Component {
