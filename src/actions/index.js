@@ -12,8 +12,10 @@ export const CREATE_DEVLOG = 'CREATE_DEVLOG';
 
 export const UPLOAD_FILE = 'UPLOAD_FILE';
 
-export const ROOT_URL = 'http://localhost:8000';
-export const MEDIA_URL = 'http://localhost:8000/media/';
+const host = window.location.host.split(':')[0];
+
+export const ROOT_URL = 'http://'+  host + ':8000';
+export const MEDIA_URL = 'http://' +  host + ':8000/media/';
 
 export const fetchPosts = (filter) => {
     let url = `${ROOT_URL}/api/posts/`;

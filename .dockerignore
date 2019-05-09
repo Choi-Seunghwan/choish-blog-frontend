@@ -1,0 +1,7 @@
+.git
+.gitignore
+Dockerfile
+.vscode
+.idea
+.gitattributes
+node_modules

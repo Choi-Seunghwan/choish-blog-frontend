@@ -16,7 +16,7 @@ class Home extends Component {
     render(){
         return (
             <Layout>
-                <BannerHeader path="home" title="Choi Seunghwan Tech Blog" subtitle="subsubsub" />
+                <BannerHeader path="home" title="Choi Seunghwan Tech Blog"/>
                 <SideMenu />
                 <Main className="home">
                     <PostList />
