@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import postreducer from './reducer_post';
-import devlogreducer from './reducer_devlog';
+import itemreducer from './reducer_item';
 
 const reducers = combineReducers({
-    posts : postreducer,
-    devlogs : devlogreducer,
+    items : itemreducer,
     
 });
 

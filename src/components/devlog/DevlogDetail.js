@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchDevlog } from '../../actions/index';
+import { fetchItem } from '../../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
 import { Chip } from '@material-ui/core';
@@ -9,13 +9,18 @@ import { Link } from 'react-router-dom';
 class DevlogDetail extends Component {
 
     componentDidMount() {
-		let slug = this.props.params.match.params.slug
-		this.props.fetchDevlog(slug);
+		let slug = this.props.params.match.params.slug;
+		let api= "devlog"
+		let filter = {
+			api : api
+		}
+
+		this.props.fetchItem(slug, filter);
     }
     
     renderDevlog() {
         const devlog = this.props.devlog;
-        console.log(devlog);
+        
         if (!devlog) {return (<div></div>);};
         let contents = devlog.contents
 
@@ -62,7 +67,7 @@ class DevlogDetail extends Component {
 
 
     render() {
-        console.log("there")
+        
         return (
             <article className="post-detail">
                 { this.renderDevlog() }
@@ -73,7 +78,7 @@ class DevlogDetail extends Component {
 
 
 const mapStateToProps = (state) => ({
-	devlog: state.devlogs.devlog,
+	devlog: state.items.item,
 })
 
-export default connect(mapStateToProps, { fetchDevlog, })(DevlogDetail);
+export default connect(mapStateToProps, { fetchItem, })(DevlogDetail);

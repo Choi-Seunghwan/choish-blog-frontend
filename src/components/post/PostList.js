@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import PostCard from './PostCard';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/index';
+import { fetchItems } from '../../actions/index';
 
 class PostList extends Component {
 
 	fetchAndFilterPosts(){
+		let api = "post";
+
 		let filter = {
-			tag: "",
+			api: api,
+			tag: ''
 		}
 		if(this.props.params)
 			if (this.props.params.match.params.tag){
 				filter.tag = this.props.params.match.params.tag;
 			}
 		
-		this.props.fetchPosts(filter);
+		this.props.fetchItems(filter);
 	}
 
 	componentDidMount() {
@@ -50,7 +53,7 @@ class PostList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	posts: state.posts.all,
+	posts: state.items.all,
 })
 
-export default connect(mapStateToProps, {fetchPosts, })(PostList);
+export default connect(mapStateToProps, {fetchItems, })(PostList);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchPost } from '../../actions/index';
+import { fetchItem } from '../../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
 import { Chip } from '@material-ui/core';
@@ -29,9 +29,13 @@ class PostDetail extends Component {
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.addEventListener);
+		let api = "post"
+		let filter = {
+			api: api
+		}
 
 		let slug = this.props.params.match.params.slug
-		this.props.fetchPost(slug);
+		this.props.fetchItem(slug, filter);
 	}
 
 	renderPost() {
@@ -91,8 +95,8 @@ class PostDetail extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	post: state.posts.post,
+	post: state.items.item,
 })
 
 
-export default connect(mapStateToProps, { fetchPost, })(PostDetail);
+export default connect(mapStateToProps, { fetchItem, })(PostDetail);

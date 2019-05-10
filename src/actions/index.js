@@ -1,15 +1,10 @@
 import axios from 'axios';
 
-export const FETCH_POSTS = 'FETCH_POSTS';
-export const FETCH_POST ='FETCH_POST';
-export const CREATE_POST = 'CREATE_POST';
-export const DELETE_POST = 'DELETE_POST';
-export const UPDATE_POST = 'UPDATE_POST';
-
-export const FETCH_DEVLOGS = 'FETCH_DEVLOGS';
-export const FETCH_DEVLOG = 'FETCH_DEVLOG';
-export const CREATE_DEVLOG = 'CREATE_DEVLOG';
-
+export const FETCH_ITEMS = 'FETCH_ITEMS';
+export const FETCH_ITEM ='FETCH_ITEM';
+export const CREATE_ITEM = 'CREATE_ITEM';
+export const DELETE_ITEM = 'DELETE_ITEM';
+export const UPDATE_ITEM = 'UPDATE_ITEM';
 export const UPLOAD_FILE = 'UPLOAD_FILE';
 
 const host = window.location.host.split(':')[0];
@@ -17,10 +12,20 @@ const host = window.location.host.split(':')[0];
 export const ROOT_URL = 'http://'+  host + ':8000';
 export const MEDIA_URL = 'http://' +  host + ':8000/media/';
 
-export const fetchPosts = (filter) => {
+export const fetchItems = (filter) => {
     let url = `${ROOT_URL}/api/posts/`;
     
+    console.log("filter");
+    console.log(filter);
+
     if(filter){
+        if(filter.api === "post"){
+            url = `${ROOT_URL}/api/posts/`;
+        }
+        else if(filter.api == "devlog"){
+            url = `${ROOT_URL}/api/devlogs/`;
+        }
+
         if(filter.tag){
             url = url + `?tag=${filter.tag}`
         }
@@ -29,62 +34,48 @@ export const fetchPosts = (filter) => {
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
-                type: FETCH_POSTS,
+                type: FETCH_ITEMS,
                 payload: response,
             });
         });
     };
 }
 
-export function fetchDevlogs() {
-    let url = `${ROOT_URL}/api/devlogs/`;
-    return (dispatch) => {
-        axios.get(url).then(response => {
-            dispatch({
-                type: FETCH_DEVLOGS,
-                payload: response,
-            });
-        });
-    };
-}
-
-
-export const fetchPost = (slug) => {
+export const fetchItem = (slug, filter) => {
     let url = `${ROOT_URL}/api/posts/post/${slug}`;
+
+    console.log("filter");
+    console.log(filter);
+    if(filter){
+        if( filter.api === "post"){
+            url = `${ROOT_URL}/api/posts/post/${slug}`;
+        }
+        else if(filter.api === "devlog"){
+            url = `${ROOT_URL}/api/devlogs/devlog/${slug}`;
+        }
+    }
+    console.log("url")
+    console.log(url)
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
-                type: FETCH_POST,
+                type: FETCH_ITEM,
                 payload: response,
             })
         })
     }
 }
 
-export const fetchDevlog = (slug) => {
-    let url = `${ROOT_URL}/api/devlogs/devlog/${slug}`;
-    return (dispatch) => {
-        axios.get(url).then(response => {
-            dispatch({
-                type: FETCH_DEVLOG,
-                payload: response,
-            })
-        })
-    }
-}
 
-
-export function createPost(post, config) {
+export function createItem(item, config) {
     let url = '';
-    let type = null;
+    let type = CREATE_ITEM;
 
     if (config.config_type === "post"){
         url = `${ROOT_URL}/api/posts/new/`;
-        type = CREATE_POST;
     }
-    else{
+    else if (config.config_type === "devlog"){
         url = `${ROOT_URL}/api/devlogs/new/`;
-        type = CREATE_DEVLOG;
     }
 
 
@@ -102,7 +93,7 @@ export function createPost(post, config) {
 
     // const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     return (dispatch) => {
-        axios.post(url, post).then(response => {
+        axios.post(url, item).then(response => {
             dispatch({
                 type: type,
                 payload: response

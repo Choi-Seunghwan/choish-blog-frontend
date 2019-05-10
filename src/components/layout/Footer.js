@@ -7,10 +7,9 @@ class Footer extends Component {
             <footer className="site-footer outer">
                 <div className="site-footer-text inner">
                     <section className="copyright">
-                        <span>© copyright 2009 Choi Seunghwan All rights Reserved</span>
+                        <span>© copyright 2019 Choi Seunghwan All rights Reserved</span>
                     </section>
                 </div>
-
             </footer>
         )
     }

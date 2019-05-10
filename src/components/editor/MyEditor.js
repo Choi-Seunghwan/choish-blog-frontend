@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPost, uploadFile, MEDIA_URL } from '../../actions/index';
+import { createItem, uploadFile, MEDIA_URL } from '../../actions/index';
 import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core/';
 import '../../asset/css/editor.css';
 
@@ -47,7 +47,7 @@ class MyEditor extends Component {
         // const post = { title, subtitle, slug, tag, contents, cover_image_url };
         // const config = { config_type, }
 
-        // this.props.createPost(post, config);
+        // this.props.createItem(post, config);
         // this.props.params.history.push('/');
     }
 
@@ -55,7 +55,7 @@ class MyEditor extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        console.log(this.state);
+        
     }
 
     uploadCallback(file) {
@@ -192,4 +192,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect(mapStateToProps, { createPost, uploadFile, })(MyEditor);
+export default connect(mapStateToProps, { createItem, uploadFile, })(MyEditor);

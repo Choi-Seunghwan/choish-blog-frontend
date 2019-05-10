@@ -16,7 +16,7 @@ class MyAbout extends Component {
     }
 
     handleclick = () => {
-        console.log("hohohoho")
+        
         const script2 = document.createElement("script")
         script2.type = "text/javascript";
         script2.src = require('../asset/mouse-star')

@@ -14,7 +14,7 @@ class BannerHeader extends Component {
 			}
 		else
 		if (this.props.path == "tag"){
-			let count = this.props.posts.count;
+			let count = this.props.items.count;
 			let tag = this.props.params.match.params.tag;
 			return {
 				title: tag,
@@ -49,7 +49,7 @@ class BannerHeader extends Component {
 
 
 const mapStateToProps = (state) => ({
-	posts: state.posts.all,
+	items: state.items.all,
 })
 
 export default connect(mapStateToProps,)(BannerHeader);

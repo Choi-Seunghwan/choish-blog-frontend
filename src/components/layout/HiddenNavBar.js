@@ -37,13 +37,7 @@ class HiddenNavBar extends Component {
 	setTitle() {
 		let title = "title";
 		let path = window.location.pathname.split('/')[1];
-
-        if (path === "post")
-            title = this.props.post_title;
-        else if (path == "devlog")
-			title = this.props.devlog_title;
-		else
-			title = this.props.title;
+		title = this.props.item_title;
 		
 		return title;
 	}
@@ -84,8 +78,7 @@ class HiddenNavBar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	post_title: state.posts.title,
-	devlog_title: state.devlogs.title,
+	item_title: state.items.title
 })
 
 
