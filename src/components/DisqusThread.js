@@ -1,8 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const SHORTNAME = 'choitech';
-// const WEBSITE_URL = 'http://www.example.com';
+const SHORTNAME = 'choiseunghwan';
+const WEBSITE_URL = 'http://choiseunghwan.tk';
 
 function renderDisqus() {
   if (window.DISQUS === undefined) {
@@ -17,16 +17,16 @@ function renderDisqus() {
 
 class DisqusThread extends React.Component {
   static propTypes = {
-    // id: PropTypes.string.isRequired,
-    // title: PropTypes.string.isRequired,
-    // path: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
   };
 
   shouldComponentUpdate(nextProps) {
     return (
-      this.props.id !== nextProps.id //||
-      // this.props.title !== nextProps.title ||
-      // this.props.path !== nextProps.path
+      this.props.id !== nextProps.id ||
+      this.props.title !== nextProps.title ||
+      this.props.path !== nextProps.path
     );
   }
 
@@ -43,9 +43,9 @@ class DisqusThread extends React.Component {
 
     if (process.env.BROWSER) {
       window.disqus_shortname = SHORTNAME;
-      // window.disqus_identifier = id;
-      // window.disqus_title = title;
-      // window.disqus_url = WEBSITE_URL + path;
+      window.disqus_identifier = id;
+      window.disqus_title = title;
+      window.disqus_url = WEBSITE_URL + path;
     }
 
     return <div {...other} id="disqus_thread" />;

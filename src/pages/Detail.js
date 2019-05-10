@@ -13,11 +13,11 @@ import Author from '../components/Author';
 class Detail extends Component {
 
     renderDetailPage(){
-        let path = this.props.location.pathname.split('/')[1];
+        let pathname = this.props.location.pathname.split('/')[1];
 
-        if (path === "post")
+        if (pathname === "post")
             return(<PostDetail params={this.props}/>)
-        else if (path == "devlog")
+        else if (pathname == "devlog")
             return(<DevlogDetail params={this.props}/>)
         else
             return(<div></div>)
@@ -25,6 +25,8 @@ class Detail extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
+        console.log(this.props)
+        console.log("hello");
       }
 
     render() {
@@ -35,7 +37,11 @@ class Detail extends Component {
                 <Main>
                     { this.renderDetailPage() }
                     <Author />
-                    <DisqusThread />
+                    <DisqusThread 
+                        id = { this.props.location.pathname }
+                        title = { this.props.match.params.slug }
+                        path = { this.props.location.pathname }
+                    />
                 </Main>
                 <Footer />
             </Layout>

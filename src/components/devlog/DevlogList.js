@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDevlogs } from '../../actions/index';
+import { fetchPosts } from '../../actions/index';
 import DevlogCard from './DevlogCard';
 import StackGrid from "react-stack-grid";
 import sizeMe from 'react-sizeme';
@@ -9,6 +9,7 @@ class DevlogList extends Component {
 
     fetchAndFilterDevlogs(){
 		let filter = {
+            api: "devlog",
 			tag: "",
 		}
 		if(this.props.params)
@@ -16,7 +17,7 @@ class DevlogList extends Component {
 				filter.tag = this.props.params.match.params.tag;
 			}
 		
-		this.props.fetchDevlogs(filter);
+		this.props.fetchPosts(filter);
 	}
 
 	componentDidMount() {
@@ -61,4 +62,4 @@ const mapStateToProps = (state) => ({
 	devlogs: state.devlogs.all,
 })
 
-export default connect(mapStateToProps, {fetchDevlogs, })(sizeMe()(DevlogList));
+export default connect(mapStateToProps, {fetchPosts, })(sizeMe()(DevlogList));

@@ -11,18 +11,19 @@ class PostDetail extends Component {
 		super(props);
 		this.state = {
 			opacity: 1,
+			display: "flex"
 		};
 	}
 
 	addEventListener = (e) => {
 		if (window.scrollY > 250) {
-			this.setState({ opacity: 0 })
+			this.setState({ opacity: 0, display: "none" })
 		}
 		else if (window.scrollY > 100) {
-			this.setState({ opacity: 0.5 })
+			this.setState({ opacity: 0.5, display: "flex"})
 		}
 		else {
-			this.setState({ opacity: 1 })
+			this.setState({ opacity: 1, display: "flex" })
 		}
 	}
 
@@ -45,7 +46,7 @@ class PostDetail extends Component {
 			<div>
 				<div className="parallax-outer marginbottom-20vh">
 					<figure className="parallax-background vh100" style={{ backgroundImage: `url(${post.cover_image_url})` }}>
-						<header className="post-detail-header" style={{ opacity: this.state.opacity }} >
+						<header className="post-detail-header" style={{ opacity: this.state.opacity, display: this.state.display}} >
 							<h1 className="detail-header-title">{post.title}</h1>
 							<h4 className="detail-header-subtitle">{post.subtitle}</h4>
 						</header>
