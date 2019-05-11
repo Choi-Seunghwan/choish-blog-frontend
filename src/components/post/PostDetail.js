@@ -6,6 +6,7 @@ import { Chip } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 class PostDetail extends Component {
+	_istMounted = false
 
 	constructor(props) {
 		super(props);
@@ -16,18 +17,22 @@ class PostDetail extends Component {
 	}
 
 	addEventListener = (e) => {
-		if (window.scrollY > 250) {
-			this.setState({ opacity: 0, display: "none" })
-		}
-		else if (window.scrollY > 100) {
-			this.setState({ opacity: 0.5, display: "flex"})
-		}
-		else {
-			this.setState({ opacity: 1, display: "flex" })
+		if(this._istMounted )
+		{
+			if (window.scrollY > 250) {
+				this.setState({ opacity: 0, display: "none" })
+			}
+			else if (window.scrollY > 100) {
+				this.setState({ opacity: 0.5, display: "flex"})
+			}
+			else {
+				this.setState({ opacity: 1, display: "flex" })
+			}
 		}
 	}
 
 	componentDidMount() {
+		this._istMounted = true
 		window.addEventListener('scroll', this.addEventListener);
 		let api = "post"
 		let filter = {
@@ -36,6 +41,11 @@ class PostDetail extends Component {
 
 		let slug = this.props.params.match.params.slug
 		this.props.fetchItem(slug, filter);
+	}
+
+	componentWillUnmount(){
+		this._istMounted = false
+		window.removeEventListener('scroll', this.addEventListener);
 	}
 
 	renderPost() {

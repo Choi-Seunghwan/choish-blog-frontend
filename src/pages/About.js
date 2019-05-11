@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Footer from '../components/layout/Footer'
 import Layout from '../components/layout/Layout';
 import Main from '../components/layout/Main';
-import SideMenu from '../components/layout/SideMenu';
 import MyAbout from '../components/MyAbout';
 import Header from '../components/layout/Header';
 class About extends Component {
@@ -15,7 +14,6 @@ class About extends Component {
         return (
             <Layout>
                 <Header  title={"About Choi Seunghwan."} />
-                <SideMenu />
                 <Main>
                     <MyAbout />
                 </Main>

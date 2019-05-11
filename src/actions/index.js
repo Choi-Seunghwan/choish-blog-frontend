@@ -1,61 +1,69 @@
 import axios from 'axios';
 
 export const FETCH_ITEMS = 'FETCH_ITEMS';
+export const FETCH_ITEMS_APPEND = 'FETCH_ITEMS_APPEND'; //endglish, 같은 것을 붙이면 append. 서로 다른 것을 붙이면 attach, 책상에 포스트잇을 attach(붙이다) 포스트잇에 포스트잇을 append(붙이다) 
 export const FETCH_ITEM ='FETCH_ITEM';
 export const CREATE_ITEM = 'CREATE_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const UPDATE_ITEM = 'UPDATE_ITEM';
 export const UPLOAD_FILE = 'UPLOAD_FILE';
 
+export const SET_LOADING = 'SET_LOADING';
+export const UNSET_LOADING = 'UNSET_LOADING';
+
+
 const host = window.location.host.split(':')[0];
 
 export const ROOT_URL = 'http://'+  host + ':8000';
 export const MEDIA_URL = 'http://' +  host + ':8000/media/';
 
-export const fetchItems = (filter) => {
+export const fetchItems = (config) => {
     let url = `${ROOT_URL}/api/posts/`;
-    
-    console.log("filter");
-    console.log(filter);
+    let type = FETCH_ITEMS;
 
-    if(filter){
-        if(filter.api === "post"){
-            url = `${ROOT_URL}/api/posts/`;
+    if(config){
+        if(config.api === "post"){
+            url = `${ROOT_URL}/api/posts/?`;
         }
-        else if(filter.api == "devlog"){
-            url = `${ROOT_URL}/api/devlogs/`;
+        else if(config.api == "devlog"){
+            url = `${ROOT_URL}/api/devlogs/?`;
         }
 
-        if(filter.tag){
-            url = url + `?tag=${filter.tag}`
+        if(config.tag){
+            url = url + `&tag=${config.tag}`
+        }
+
+        if(config.append){
+            type = FETCH_ITEMS_APPEND;
+            url = url + `&page=${config.page}`
         }
     }
-    
+    // console.log("url");
+    // console.log(url);
+
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
-                type: FETCH_ITEMS,
+                type: type,
                 payload: response,
             });
+            dispatch(unsetLoading()); //using two dispatch is allowed. 
         });
     };
 }
 
-export const fetchItem = (slug, filter) => {
+export const fetchItem = (slug, config) => {
     let url = `${ROOT_URL}/api/posts/post/${slug}`;
 
-    console.log("filter");
-    console.log(filter);
-    if(filter){
-        if( filter.api === "post"){
+    if(config){
+        if( config.api === "post"){
             url = `${ROOT_URL}/api/posts/post/${slug}`;
         }
-        else if(filter.api === "devlog"){
+        else if(config.api === "devlog"){
             url = `${ROOT_URL}/api/devlogs/devlog/${slug}`;
         }
     }
-    console.log("url")
-    console.log(url)
+
     return (dispatch) => {
         axios.get(url).then(response => {
             dispatch({
@@ -125,5 +133,17 @@ export function uploadFile(file) {
             // console.log("error")
             // console.log(error.response)
         })
+    }
+}
+
+export function setLoading(){
+    return (dispatch) => {
+        dispatch({type: SET_LOADING})
+    }
+}
+
+export function unsetLoading(){
+    return (dispatch) => {
+        dispatch({type: UNSET_LOADING})
     }
 }

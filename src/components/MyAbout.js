@@ -55,7 +55,7 @@ class MyAbout extends Component {
                             그럼 다들 좋은 하루 되세요. 방문해 주셔서 감사합니다.
                         </p>
                         <p>
-                            - May 1, 2019
+                            - May 1, 2019, 어쩌구 저쩌구 추가추가추가 등등 기타 등등.
                         </p>
                         <div dangerouslySetInnerHTML={{ __html: aboutmeHtml }} />
                     </div>

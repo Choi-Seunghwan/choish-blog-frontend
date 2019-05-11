@@ -5,6 +5,8 @@ import { LinearProgress } from '@material-ui/core';
 
 
 class HiddenNavBar extends Component {
+	_istMounted = false
+
 	constructor(props){
 		super(props)
 		this.state = {
@@ -14,24 +16,26 @@ class HiddenNavBar extends Component {
 	}
 
 	scrollEventListener = (e) => {
-		let windowScrollY = window.scrollY;
-		let innerHeight = window.innerHeight;
-		let bodyElement = document.getElementById('root');
-		let root = bodyElement.getBoundingClientRect();
-		let heightHtml = root.height;
-		let scrollMax = Math.ceil( heightHtml - innerHeight);
+		if( this._istMounted ){
+			let windowScrollY = window.scrollY;
+			let innerHeight = window.innerHeight;
+			let bodyElement = document.getElementById('root');
+			let root = bodyElement.getBoundingClientRect();
+			let heightHtml = root.height;
+			let scrollMax = Math.ceil( heightHtml - innerHeight);
 
 
-		// scroll event. hiddenNav visible or unvisible
-		if (windowScrollY < 250) {
-			this.setState({ transform: "translateY(-100%)" })
-		}else {
-			this.setState({ transform: "translateY(0%)"})
+			// scroll event. hiddenNav visible or unvisible
+			if (windowScrollY < 250) {
+				this.setState({ transform: "translateY(-100%)" })
+			}else {
+				this.setState({ transform: "translateY(0%)"})
+			}
+			
+			// scroll evnet. get progressbar scoll rate
+			let scrollRate = parseInt( (windowScrollY / scrollMax) * 100, 10);
+			this.setState({scrollRate: scrollRate })
 		}
-		
-		// scroll evnet. get progressbar scoll rate
-		let scrollRate = parseInt( (windowScrollY / scrollMax) * 100, 10);
-		this.setState({scrollRate: scrollRate })
 	}
 
 	setTitle() {
@@ -43,7 +47,13 @@ class HiddenNavBar extends Component {
 	}
 
 	componentDidMount() {
+		this._istMounted = true
 		window.addEventListener('scroll', this.scrollEventListener)
+	}
+
+	componentWillUnmount() {
+		this._istMounted = false
+		window.removeEventListener('scroll', this.scrollEventListener);
 	}
 
 	render() {

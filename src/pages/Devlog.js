@@ -3,7 +3,6 @@ import Footer from '../components/layout/Footer'
 import Layout from '../components/layout/Layout';
 import Main from '../components/layout/Main';
 import BannerHeader from '../components/layout/BannerHeader';
-import SideMenu from '../components/layout/SideMenu';
 import DevlogList from '../components/devlog/DevlogList';
 
 class Tag extends Component {
@@ -16,7 +15,6 @@ class Tag extends Component {
         return (
             <Layout>
                 <BannerHeader path="devlog" title={"DevLog"} subtitle={"기록되지 않은 것은 기억되지 않는다"}/>
-                <SideMenu />
                 <Main>
                     <DevlogList />
                 </Main>

@@ -3,30 +3,38 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@ma
 import { Link } from 'react-router-dom';
 
 class SideMenu extends Component {
+    _istMounted = false
 
     constructor(props) {
         super(props);
         this.state = {
             left: false,
             tabPos: 0,
+            isLoading: true
         }
     }
 
-    tabEventListener = (e) => {
-        let windowScrollY = window.scrollY;
-
-        this.setState({ tabPos: windowScrollY + 230 })
+    tabEventListener = (e) => { 
+        if( this._istMounted ){
+            let windowScrollY = window.scrollY;
+            this.setState({ tabPos: windowScrollY + 230 })
+        }
     }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.tabEventListener);
-    }
-
     toggleDrawer = (side, open) => () => {
         this.setState({
             [side]: open,
         });
     };
+
+    componentDidMount(){
+        this._istMounted = true
+        window.addEventListener('scroll', this.tabEventListener);
+    }
+
+    componentWillUnmount(){
+        this._istMounted = false
+        window.removeEventListener('scoll', this.tabEventListener);
+    }
 
     render() {
         return (

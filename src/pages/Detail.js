@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/Layout';
 import Header from '../components/layout/Header';
-import SideMenu from '../components/layout/SideMenu';
 import Main from '../components/layout/Main';
 import Footer from '../components/layout/Footer';
 import PostDetail from '../components/post/PostDetail';
@@ -32,7 +31,6 @@ class Detail extends Component {
         return (
             <Layout>
                 <Header />
-                <SideMenu />
                 <Main>
                     { this.renderDetailPage() }
                     <Author />
