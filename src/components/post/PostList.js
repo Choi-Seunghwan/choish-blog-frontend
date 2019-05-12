@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PostCard from './PostCard';
 import { connect } from 'react-redux';
 import { fetchItems ,setLoading, unsetLoading} from '../../actions/index';
-import sizeMe from 'react-sizeme'
 
 class PostList extends Component {
 	_istMounted = false
@@ -12,8 +11,6 @@ class PostList extends Component {
 		let api = "post";
 		let page = 1;
 
-		console.log("next")
-		console.log(this.props.nextPage)
 		if (append) {
 			if (this.props.nextPage) {
 				page = this.props.nextPage.split("?page=")[1];
@@ -39,15 +36,11 @@ class PostList extends Component {
 
 	scrollEventListener = (e) => {
 		if (this._istMounted) {
-			// console.log(window.scrollY)
-			// console.log(this.props.size.height);
 
-			if (window.scrollY > this.props.size.height - 500
+			if (window.scrollY > document.getElementById('post-list').scrollHeight-800
 				&& !this.props.loading) {
 				let append = true;
 				this.fetchAndConfigPosts(append);
-				console.log("here???")
-				
 			}
 		}
 	}
@@ -73,7 +66,7 @@ class PostList extends Component {
 
 	renderPostCard() {
 		const items = this.props.posts.results;
-
+		console.log(items);
 		if (!items) { return (<div></div>); };
 		let postCards = []
 		items.forEach(function (i, index) {
@@ -84,7 +77,7 @@ class PostList extends Component {
 
 	render() {
 		return (
-			<div className="post-list">
+			<div id="post-list" className="post-list">
 				{this.renderPostCard()}
 			</div>
 		)
@@ -99,4 +92,4 @@ const mapStateToProps = (state) => ({
 	loading: state.utils.loading,
 })
 
-export default connect(mapStateToProps, { fetchItems, setLoading, unsetLoading})(sizeMe({ monitorHeight: true })(PostList));
+export default connect(mapStateToProps, { fetchItems, setLoading, unsetLoading})(PostList);

@@ -45,7 +45,6 @@ class DevlogList extends Component {
 				&& !this.props.loading) {
 				let append = true;
 				this.fetchAndConfigDevlogs(append);
-				console.log("here???")
 				
 			}
 		}
