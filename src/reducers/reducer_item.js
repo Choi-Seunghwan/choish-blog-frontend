@@ -1,4 +1,4 @@
-import { FETCH_ITEMS, FETCH_ITEM, FETCH_ITEMS_APPEND} from '../actions/index'
+import { FETCH_ITEMS, FETCH_ITEM, FETCH_ITEMS_APPEND, CLEAR_FETCHED_ITEM, CLEAR_FETCHED_ITEMS} from '../actions/index'
 
 const initialState = {
     all: [],
@@ -36,7 +36,18 @@ const itemreducer = (state = initialState, action) => {
                 nextPage: action.payload.data.next,
                 prevPage: action.payload.data.previous
             };
-            
+        
+        case CLEAR_FETCHED_ITEM:
+            return {
+                ...state,
+                item: null
+            }
+        
+        case CLEAR_FETCHED_ITEMS:
+            return {
+                ...state,
+                all: []
+            }
         default:
             return state;
     }

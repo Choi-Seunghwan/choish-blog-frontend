@@ -27,8 +27,8 @@ class DevlogCard extends Component {
                             <span className="card-tags">{devlog.tag}</span>
                             <h2 className="devlog-card-title">{devlog.title}</h2>
                         </header>
-                        <section className="">
-                            {/* <p>{devlog.subtitle}</p> */}
+                        <section className="devlog-card-subtitle">
+                            <p>{devlog.subtitle}</p>
                         </section>
 
                     </Link>

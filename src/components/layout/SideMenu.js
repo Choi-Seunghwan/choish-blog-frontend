@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
+import { Drawer, List, ListItem, ListItemAvatar, Avatar, ListItemText, Divider } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 class SideMenu extends Component {
@@ -50,7 +50,7 @@ class SideMenu extends Component {
                     </div>
                     <div className="sidemenu-logo">
                         <Link to="/" onClick={ this.toggleDrawer('left', false) }>
-                            <p className="sidemenu-logo-title">Choi Seunghwna</p>
+                            <p className="sidemenu-logo-title">Choi Seunghwan</p>
                             <p className="sidemenu-logo-subtitle">Tech Blog  </p>
                         </Link>
                         <List>
@@ -80,9 +80,16 @@ class SideMenu extends Component {
                             </ListItem>
                         </List>
                         <Divider />
-                        <List>
-                            
-                        </List>
+                            <div className="nav-icons">
+                            <a className="nav-icon" target="_blank" rel="noopener noreferrer"
+                                href="https://github.com/Choi-Seunghwan"><i className="fa fa-github fa-2x"></i></a>
+                            <a className="nav-icon" target="_blank" rel="noopener noreferrer"
+                                href="https://www.linkedin.com/in/seunghwan-choi-tech/"><i className="fa fa-linkedin fa-2x"></i></a>
+                        </div>
+                        <div>
+                            <p>© copyright 2019</p>
+                            <p>Choi Seunghwan All rights Reserved</p>
+                        </div>
                     </div>
                     <div className="sidemenu-draw" onClick={this.toggleDrawer('left', false)}>
                         <i className="fa fa-chevron-left" style={{ marginLeft: "3px" }} /> </div>

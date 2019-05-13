@@ -7,6 +7,9 @@ export const CREATE_ITEM = 'CREATE_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const UPDATE_ITEM = 'UPDATE_ITEM';
 export const UPLOAD_FILE = 'UPLOAD_FILE';
+export const CLEAR_FETCHED_ITEM = 'CLEAR_FETCHED_ITEM'; // 미리 fetch 된 데이터가 남아있어, 데이터 받기 전 깜빡거리며 잠깐 보이는 버그 방지.
+export const CLEAR_FETCHED_ITEMS = 'CLEAR_FETCHED_ITEMS'; // 미리 fetch 된 데이터가 남아있어, 데이터 받기 전 깜빡거리며 잠깐 보이는 버그 방지.
+
 
 export const SET_LOADING = 'SET_LOADING';
 export const UNSET_LOADING = 'UNSET_LOADING';
@@ -112,7 +115,17 @@ export function createItem(item, config) {
     }
 }
 
+export function clearFetchedItem(){
+    return (dispatch) => {
+        dispatch({type: CLEAR_FETCHED_ITEM})
+    }
+}
 
+export function clearFetchedItems(){
+    return (dispatch) => {
+        dispatch({type: CLEAR_FETCHED_ITEMS})
+    }
+}
 
 export function uploadFile(file) {
     let url = `${ROOT_URL}/upload/${file.name}`;
@@ -147,3 +160,4 @@ export function unsetLoading(){
         dispatch({type: UNSET_LOADING})
     }
 }
+

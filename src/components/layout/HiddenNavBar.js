@@ -41,7 +41,10 @@ class HiddenNavBar extends Component {
 	setTitle() {
 		let title = "title";
 		let path = window.location.pathname.split('/')[1];
-		title = this.props.item_title;
+		if(this.props.title)
+			title = this.props.title
+		else
+			title = this.props.item_title;
 		
 		return title;
 	}

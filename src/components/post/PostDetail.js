@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchItem } from '../../actions/index';
+import { fetchItem, clearFetchedItem } from '../../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
 import { Chip } from '@material-ui/core';
@@ -19,11 +19,17 @@ class PostDetail extends Component {
 	addEventListener = (e) => {
 		if(this._istMounted )
 		{
-			if (window.scrollY > 250) {
+			if (window.scrollY > 450) {
 				this.setState({ opacity: 0, display: "none" })
 			}
-			else if (window.scrollY > 100) {
+			else if (window.scrollY > 300) {
+				this.setState({ opacity: 0.3, display: "flex"})
+			}
+			else if (window.scrollY > 200) {
 				this.setState({ opacity: 0.5, display: "flex"})
+			}
+			else if (window.scrollY > 100) {
+				this.setState({ opacity: 0.7, display: "flex"})
 			}
 			else {
 				this.setState({ opacity: 1, display: "flex" })
@@ -46,6 +52,7 @@ class PostDetail extends Component {
 	componentWillUnmount(){
 		this._istMounted = false
 		window.removeEventListener('scroll', this.addEventListener);
+		this.props.clearFetchedItem();
 	}
 
 	renderPost() {
@@ -71,7 +78,6 @@ class PostDetail extends Component {
 					
 					<div className="content-markdown">
 						<div dangerouslySetInnerHTML={{ __html: markdown }} />
-						{post.subtitle}
 					</div>
 
 					<div className="detail-contents-discription">
@@ -109,4 +115,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { fetchItem, })(PostDetail);
+export default connect(mapStateToProps, { fetchItem, clearFetchedItem })(PostDetail);

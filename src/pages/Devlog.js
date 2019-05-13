@@ -14,7 +14,7 @@ class Tag extends Component {
     render(){
         return (
             <Layout>
-                <BannerHeader path="devlog" title={"DevLog"} subtitle={"기록되지 않은 것은 기억되지 않는다"}/>
+                <BannerHeader path="devlog" title={"DevLog"} subtitle={"개발 일지"}/>
                 <Main>
                     <DevlogList />
                 </Main>

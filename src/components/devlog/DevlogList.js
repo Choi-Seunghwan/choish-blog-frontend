@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchItems ,setLoading, unsetLoading} from '../../actions/index';
+import { fetchItems , clearFetchedItems, setLoading, unsetLoading} from '../../actions/index';
 import DevlogCard from './DevlogCard';
 import StackGrid from "react-stack-grid";
 import sizeMe from 'react-sizeme';
@@ -38,14 +38,11 @@ class DevlogList extends Component {
     
     scrollEventListener = (e) => {
 		if (this._istMounted) {
-			// console.log(window.scrollY)
-			// console.log(this.props.size.height);
 
-			if (window.scrollY > this.props.size.height - 200
+			if (window.scrollY > document.getElementById('devlog-list').scrollHeight-600
 				&& !this.props.loading) {
 				let append = true;
-				this.fetchAndConfigDevlogs(append);
-				
+                this.fetchAndConfigDevlogs(append);
 			}
 		}
 	}
@@ -66,7 +63,8 @@ class DevlogList extends Component {
     
     componentWillUnmount() {
 		this._istMounted = false;
-		window.removeEventListener('scroll', this.scrollEventListener);
+        window.removeEventListener('scroll', this.scrollEventListener);
+        this.props.clearFetchedItems();
 	}
 
 
@@ -85,10 +83,10 @@ class DevlogList extends Component {
         const { size: { width } } = this.props;
 
         return (
-            <div className="devlog-list">
-                <StackGrid columnWidth={ width >= 800 ? '22.2%' : 
-                                            width >= 600 ? '33.3%' :
-                                            width >= 450 ? '45%' : '100%'}>
+            <div id="devlog-list" className="devlog-list">
+                <StackGrid columnWidth={ width >= 950 ? '22.2%' : 
+                                            width >= 700 ? '33.3%' :
+                                            width >= 500 ? '45%' : '100%'}>
                     {this.renderDevlogCard()}
                 </StackGrid>
             </div>
@@ -104,4 +102,4 @@ const mapStateToProps = (state) => ({
 	loading: state.utils.loading,
 })
 
-export default connect(mapStateToProps, {fetchItems, setLoading, unsetLoading })(sizeMe()(DevlogList));
+export default connect(mapStateToProps, {fetchItems, clearFetchedItems, setLoading, unsetLoading })(sizeMe()(DevlogList));

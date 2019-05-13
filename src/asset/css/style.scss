@@ -114,6 +114,7 @@
 .nav-icons {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .nav-icon {
@@ -331,12 +332,14 @@
 }
 
 .devlog-card {
-    min-height: 100px;
+    min-height: 350px;
     background: white 50%;
     background-size: cover;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgba(10, 10, 10, .2);
     transition: all .5s;
+    height: auto;
+
 }
 
 .devlog-card:hover{
@@ -346,7 +349,14 @@
 .devlog-card-title {
     font-size: 1.3rem;
     font-weight: normal;
-    overflow: hidden;
+    font-family: 'oACYCZno';
+    margin:0;
+    word-break:break-all;
+}
+
+.devlog-card-subtitle {
+    font-size: 1.3rem;
+    font-weight: normal;
     font-family: 'oACYCZno';
     margin:0;
     word-break:break-all;
@@ -368,7 +378,7 @@
 
 .card-image {
     width: 100%;
-    min-height: 100px;
+    min-height: 200px;
     background: #bbbbbb no-repeat 50%;
     background-size: cover;
 }
@@ -384,7 +394,7 @@
 .card-content-link {
     position: relative;
     display: block;
-    margin: 5px;
+    margin: 25px;
     color: #2a2a2a;
 }
 

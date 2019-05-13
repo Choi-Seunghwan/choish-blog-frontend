@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchItem } from '../../actions/index';
+import { fetchItem, clearFetchedItem } from '../../actions/index';
 import { connect } from 'react-redux';
 import Remarkable from 'remarkable';
 import { Chip } from '@material-ui/core';
@@ -14,10 +14,14 @@ class DevlogDetail extends Component {
 		let filter = {
 			api : api
 		}
-
 		this.props.fetchItem(slug, filter);
     }
-    
+	
+	componentWillUnmount(){
+		this._istMounted = false
+		this.props.clearFetchedItem();
+	}
+
     renderDevlog() {
         const devlog = this.props.devlog;
         
@@ -41,7 +45,6 @@ class DevlogDetail extends Component {
                 <section className="detail-contents">
 					<div className="content-markdown">
 						<div dangerouslySetInnerHTML={{ __html: markdown }} />
-						{devlog.subtitle}
 					</div>
 
                     <div className="detail-contents-discription">
@@ -65,9 +68,7 @@ class DevlogDetail extends Component {
         )
     }
 
-
     render() {
-        
         return (
             <article className="post-detail">
                 { this.renderDevlog() }
@@ -76,9 +77,8 @@ class DevlogDetail extends Component {
     }
 }
 
-
 const mapStateToProps = (state) => ({
 	devlog: state.items.item,
 })
 
-export default connect(mapStateToProps, { fetchItem, })(DevlogDetail);
+export default connect(mapStateToProps, { fetchItem, clearFetchedItem })(DevlogDetail);

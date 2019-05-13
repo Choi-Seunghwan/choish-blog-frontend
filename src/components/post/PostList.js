@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PostCard from './PostCard';
 import { connect } from 'react-redux';
-import { fetchItems ,setLoading, unsetLoading} from '../../actions/index';
+import { fetchItems , clearFetchedItems, setLoading, unsetLoading} from '../../actions/index';
 
 class PostList extends Component {
 	_istMounted = false
@@ -55,18 +55,18 @@ class PostList extends Component {
 		if (this.props.params)
 			if (this.props.params.match.path !== prevProps.params.match.path
 				|| this.props.params.match.params.tag !== prevProps.params.match.params.tag) {
-				this.fetchAndConfigPosts()
+				this.fetchAndConfigPosts();
 			}
 	}
 
 	componentWillUnmount() {
 		this._istMounted = false;
 		window.removeEventListener('scroll', this.scrollEventListener);
+		this.props.clearFetchedItems();
 	}
 
 	renderPostCard() {
 		const items = this.props.posts.results;
-		console.log(items);
 		if (!items) { return (<div></div>); };
 		let postCards = []
 		items.forEach(function (i, index) {
@@ -92,4 +92,4 @@ const mapStateToProps = (state) => ({
 	loading: state.utils.loading,
 })
 
-export default connect(mapStateToProps, { fetchItems, setLoading, unsetLoading})(PostList);
+export default connect(mapStateToProps, { fetchItems, clearFetchedItems, setLoading, unsetLoading})(PostList);
