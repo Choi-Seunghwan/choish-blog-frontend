@@ -31,7 +31,7 @@ class MyAbout extends Component {
                     <figure className="parallax-background vh100" style={{ backgroundImage: "url(" + aboutImg + ")", backgroundSize: "contain" }}>
                         <header className="post-detail-header">
                             <h1 className="detail-header-title">About Choi Seunghwan</h1>
-                            <h4 className="detail-header-subtitle">Creative Developer</h4>
+                            <h4 className="detail-header-subtitle">Information Technology Specialist</h4>
                         </header>
                     </figure>
                 </div>
@@ -43,19 +43,13 @@ class MyAbout extends Component {
                             안녕하세요 최승환입니다.
                         </p>
                         <p>
-                            어릴 적 레고를 조립하는 것처럼,
+                            어릴 적 레고를 조립하는 것처럼, 소프트웨어를 설계하고 구조를 분석하고 성능을 최적화 하는데 <span className="mouse-text" onClick={this.handleclick}>흥미</span>가 있습니다.
                         </p>
                         <p>
-                            소프트웨어를 설계하고 구조를 분석하고 성능을 최적화 하는데 <span className="mouse-text" onClick={this.handleclick}>흥미</span>가 있습니다.
+                            또한 최근엔 웹 앱 서비스, Frontend, Backend 에 관심이 생겨 Toy Project를 진행하고 있습니다.
                         </p>
                         <p>
-                            또한 최근엔 웹 앱 서비스, Frontend, Backend에 <span className="mouse-text" onClick={this.handleclick}>흥미</span>가 생겨 Toy Project를 진행하고 있습니다.
-                        </p>
-                        <p>
-                            그럼 다들 좋은 하루 되세요. 방문해 주셔서 감사합니다.
-                        </p>
-                        <p>
-                            - May 1, 2019, 어쩌구 저쩌구 추가추가추가 등등 기타 등등.
+                            미래의 CTO를 꿈꾸며 Information Technology Specialist 가 되기 위해 노력하고 있습니다. 만나서 반갑습니다. :)    
                         </p>
                         <div dangerouslySetInnerHTML={{ __html: aboutmeHtml }} />
                     </div>
