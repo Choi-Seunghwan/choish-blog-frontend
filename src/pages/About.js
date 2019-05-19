@@ -13,7 +13,7 @@ class About extends Component {
     render() {
         return (
             <Layout>
-                <Header  title={"About Choi Seunghwan.f"} />
+                <Header  title={"About Choi Seunghwan."} />
                 <Main>
                     <MyAbout />
                 </Main>
