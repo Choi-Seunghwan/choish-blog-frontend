@@ -40,16 +40,19 @@ class MyAbout extends Component {
                     <div className="content-markdown">
                         <h2>최승환 (Choi Seunghwna)</h2>
                         <p>
-                            안녕하세요 최승환입니다.
+                            안녕하세요 미래의 CTO 를 꿈꾸는 개발자 최승환입니다.
                         </p>
                         <p>
-                            어릴 적 레고를 조립하는 것처럼, 소프트웨어를 설계하고 구조를 분석하고 성능을 최적화 하는데 <span className="mouse-text" onClick={this.handleclick}>흥미</span>가 있습니다.
+                            소프트웨어를 설계하고 효율적인 프로세스를 고민하고, 성능을 최적화하길<span className="mouse-text" onClick={this.handleclick}>좋아</span>합니다.
                         </p>
                         <p>
-                            또한 최근엔 웹 앱 서비스, Frontend, Backend 에 관심이 생겨 Toy Project를 진행하고 있습니다.
+                            새로운 기술에 꾸준히 흥미를 갖는 것은 개발자를 직업으로 삼는 사람에게 꼭 필요한 덕목이라 생각합니다.
                         </p>
                         <p>
-                            미래의 CTO를 꿈꾸며 Information Technology Specialist 가 되기 위해 노력하고 있습니다. 만나서 반갑습니다. :)    
+                            풀스택 웹 개발과 분산 시스템, 데이터 처리에 관심이 많습니다. 
+                        </p>
+                        <p>
+                            만나서 반갑습니다 :) 
                         </p>
                         <div dangerouslySetInnerHTML={{ __html: aboutmeHtml }} />
                     </div>
