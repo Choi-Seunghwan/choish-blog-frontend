@@ -38,12 +38,12 @@ class MyAbout extends Component {
 
                 <section className="detail-contents">
                     <div className="content-markdown">
-                        <h2>최승환 (Choi Seunghwna)</h2>
+                        <h2>최승환 (Choi Seunghwan)</h2>
                         <p>
                             안녕하세요 미래의 CTO 를 꿈꾸는 개발자 최승환입니다.
                         </p>
                         <p>
-                            소프트웨어를 설계하고 효율적인 프로세스를 고민하고, 성능을 최적화하길<span className="mouse-text" onClick={this.handleclick}>좋아</span>합니다.
+                            소프트웨어를 설계하고 효율적인 프로세스를 고민하고, 성능을 최적화 하는 것을 <span className="mouse-text" onClick={this.handleclick}>좋아</span>합니다.
                         </p>
                         <p>
                             새로운 기술에 꾸준히 흥미를 갖는 것은 개발자를 직업으로 삼는 사람에게 꼭 필요한 덕목이라 생각합니다.
