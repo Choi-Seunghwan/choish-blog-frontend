@@ -31,6 +31,9 @@ export const fetchItems = (config) => {
         else if(config.api == "devlog"){
             url = `${ROOT_URL}/api/devlogs/?`;
         }
+        else if(config.api == "lifelog"){
+            url = `${ROOT_URL}/api/lifelogs/?`;
+        }
 
         if(config.tag){
             url = url + `&tag=${config.tag}`
@@ -65,6 +68,9 @@ export const fetchItem = (slug, config) => {
         else if(config.api === "devlog"){
             url = `${ROOT_URL}/api/devlogs/devlog/${slug}`;
         }
+        else if(config.api === "lifelog"){
+            url = `${ROOT_URL}/api/lifelogs/lifelog/${slug}`;
+        }
     }
 
     return (dispatch) => {
@@ -87,6 +93,9 @@ export function createItem(item, config) {
     }
     else if (config.config_type === "devlog"){
         url = `${ROOT_URL}/api/devlogs/new/`;
+    }
+    else if (config.config_type === "lifelog"){
+        url = `${ROOT_URL}/api/lifelog/new/`;
     }
 
 

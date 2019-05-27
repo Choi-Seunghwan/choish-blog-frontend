@@ -3,7 +3,7 @@ import Layout from '../components/layout/Layout';
 import Header from '../components/layout/Header';
 import Main from '../components/layout/Main';
 import Footer from '../components/layout/Footer';
-import PostDetail from '../components/post/PostDetail';
+import ItemDetail from '../components/ItemDetail';
 import DisqusThread from '../components/DisqusThread';
 import DevlogDetail from '../components/devlog/DevlogDetail';
 import Author from '../components/Author';
@@ -15,9 +15,11 @@ class Detail extends Component {
         let pathname = this.props.location.pathname.split('/')[1];
 
         if (pathname === "post")
-            return(<PostDetail params={this.props}/>)
+            return(<ItemDetail params={this.props} api={"post"}/>)
         else if (pathname == "devlog")
-            return(<DevlogDetail params={this.props}/>)
+            return(<ItemDetail params={this.props} api={"devlog"}/>)
+        else if (pathname == "lifelog")
+            return(<ItemDetail params={this.props} api={"lifelog"}/>)
         else
             return(<div></div>)
     }

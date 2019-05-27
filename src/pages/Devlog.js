@@ -5,7 +5,7 @@ import Main from '../components/layout/Main';
 import BannerHeader from '../components/layout/BannerHeader';
 import DevlogList from '../components/devlog/DevlogList';
 
-class Tag extends Component {
+class Devlog extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -26,4 +26,4 @@ class Tag extends Component {
 }
 
 
-export default Tag;
+export default Devlog;

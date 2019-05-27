@@ -60,23 +60,26 @@ class SideMenu extends Component {
                             <ListItem button key={1} component={Link} to="/tag/Project" onClick={this.toggleDrawer('left', false)}>
                                 <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Project"} />
                             </ListItem>
-                            <ListItem button key={2} component={Link} to="/devlog" onClick={this.toggleDrawer('left', false)}>
-                                <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Devlog"} />
-                            </ListItem>
-                            <ListItem button key={3} component={Link} to="/tag/Frontend" onClick={this.toggleDrawer('left', false)}>
+                            <ListItem button key={2} component={Link} to="/tag/Frontend" onClick={this.toggleDrawer('left', false)}>
                                 <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Frontend"} />
                             </ListItem>
-                            <ListItem button key={4} component={Link} to="/tag/Backend" onClick={this.toggleDrawer('left', false)}>
+                            <ListItem button key={3} component={Link} to="/tag/Backend" onClick={this.toggleDrawer('left', false)}>
                                 <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Backend"} />
                             </ListItem>
-                            <ListItem button key={5} component={Link} to="/tag/Programming" onClick={this.toggleDrawer('left', false)}>
+                            <ListItem button key={4} component={Link} to="/tag/Programming" onClick={this.toggleDrawer('left', false)}>
                                 <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Programming"} />
                             </ListItem>
-                            <ListItem button key={6} component={Link} to="/tag/IT" onClick={this.toggleDrawer('left', false)}>
+                            <ListItem button key={5} component={Link} to="/tag/IT" onClick={this.toggleDrawer('left', false)}>
                                 <ListItemText classes={{ root: 'sidemenu-text' }} primary={"IT"} />
                             </ListItem>
-                            <ListItem button key={7} component={Link} to="/tag/Life" onClick={this.toggleDrawer('left', false)}>
+                            <ListItem button key={6} component={Link} to="/tag/Life" onClick={this.toggleDrawer('left', false)}>
                                 <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Life"} />
+                            </ListItem>
+                            <ListItem button key={7} component={Link} to="/devlog" onClick={this.toggleDrawer('left', false)}>
+                                <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Devlog"} />
+                            </ListItem>
+                            <ListItem button key={8} component={Link} to="/lifelog" onClick={this.toggleDrawer('left', false)}>
+                                <ListItemText classes={{ root: 'sidemenu-text' }} primary={"Lifelog"} />
                             </ListItem>
                         </List>
                         <Divider />
