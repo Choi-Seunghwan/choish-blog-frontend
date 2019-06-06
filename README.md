@@ -5,7 +5,6 @@ this is the frontend of the [choish-blog](https://github.com/Choi-Seunghwan/choi
 ## Technologies
 
 ### Frontend
-* Node 8.10
 * React 16.8
 * Redux 4.0
 * Webpack 4.3
